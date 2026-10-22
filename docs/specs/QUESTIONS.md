@@ -298,7 +298,7 @@ generated index: the questions live one file per spec, so read only the file for
 | span-render-8888 | 5 | 1 | SR8889 | questions/span-render-8888.md |
 | strings-language | 1 | 0 | SL2 | questions/strings-language.md |
 | terrain | 7 | 36 | TR44 | questions/terrain.md |
-| terrain-view | 3 | 0 | TV4 | questions/terrain-view.md |
+| terrain-view | 2 | 1 | TV4 | questions/terrain-view.md |
 | text-edit | 2 | 6 | TE9 | questions/text-edit.md |
 | texture-bindings | 3 | 1 | TB9 | questions/texture-bindings.md |
 | timers | 0 | 3 | TM4 | questions/timers.md |
@@ -320,4 +320,4 @@ generated index: the questions live one file per spec, so read only the file for
 | win-grid | 2 | 2 | WG5 | questions/win-grid.md |
 | zone-tool | 1 | 0 | ZT2 | questions/zone-tool.md |
 | zones | 2 | 56 | ZG43, ZQ17 | questions/zones.md |
-| **total** | **469** | **1280** | | |
+| **total** | **468** | **1281** | | |
