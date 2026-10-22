@@ -216,7 +216,7 @@ cSC4EdgeConnectionStore	network occupants	simulation	network-occupants.md	-	-	-
 fn:GZCOM_CreatecSC4NetworkOccupant	network occupants	simulation	network-occupants.md	-	-	-
 fn:SC4WriteGZPersistRef	network occupants	simulation	network-occupants.md	-	-	-
 fn:SC4ReadGZPersistRef	network occupants	simulation	network-occupants.md	-	-	-
-(anonymous_namespace)::ConvertV5FlagsToCurrentFlags	network occupants	simulation	network-occupants.md	-	-	-
+fn:ConvertV5FlagsToCurrentFlags	network occupants	simulation	network-occupants.md	-	-	-
 cSC4PowerPoleOccupant	network occupants	simulation	network-occupants.md	-	-	-
 cSC4PowerLineOccupant	network occupants	simulation	network-occupants.md	-	-	-
 # the pole's connection records and the two factories (network-occupants.md §4, §5)
@@ -379,7 +379,7 @@ cSC4RuleParser	graphics rules	renderer	graphics-rules.md	-	-	-
 (anonymous_namespace)::cRuleCommand	graphics rules	renderer	graphics-rules.md	-	-	-
 (anonymous_namespace)::cOptionGroupCommand	graphics rules	renderer	graphics-rules.md	-	-	-
 (anonymous_namespace)::cVendorCommand	graphics rules	renderer	graphics-rules.md	-	-	-
-(anonymous_namespace)::AddOptionToSet	graphics rules	renderer	graphics-rules.md	-	-	-
+fn:AddOptionToSet	graphics rules	renderer	graphics-rules.md	-	-	-
 _GLOBAL__N_*SC4RuleParser.cpp*	graphics rules	renderer	graphics-rules.md	-	-	-
 fn:GZCOM_CreatecSC4ConfigRuleManager	graphics rules	renderer	graphics-rules.md	-	-	-
 fn:GZCOM_cSC4ConfigRuleManagerCLSID	graphics rules	renderer	graphics-rules.md	-	-	-
@@ -458,6 +458,11 @@ fn:RZDraw*	2D drawing and fonts	renderer	-	-	-	-
 fn:Draw*	2D drawing and fonts	renderer	-	-	-	-
 # ---- ui
 cSC4ViewInputControl	city tools and input	ui	city-tools-input.md	-	-	-
+# the query tool and its dialog (city-tools-input.md §8)
+cSC4ViewInputControlQuery	city tools and input	ui	city-tools-input.md	-	-	-
+cSC4QueryDialogWinProc	city tools and input	ui	city-tools-input.md	-	-	-
+cSC4QueryAutomatonFilter	city tools and input	ui	city-tools-input.md	-	-	-
+cSC4QueryStoplightFilter	city tools and input	ui	city-tools-input.md	-	-	-
 cSC4ViewInputControlCityScroll	city tools and input	ui	view-input-controls.md	-	-	-
 cSC4ViewInputControlLevelTerrain	city tools and input	ui	view-input-controls.md	-	-	-
 cSC4ViewInputControlLabelTool	city tools and input	ui	view-input-controls.md	-	-	-
