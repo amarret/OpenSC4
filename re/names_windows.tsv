@@ -8560,26 +8560,29 @@ va	name	source	confidence	note
 00764700	cSC4BudgetUIIncomeWinProc::DoWinProcMessage	auto:A	high	mac 001aa3b2 score 0.662 support 0
 00764820	cSC4BudgetUIWinProc::IsVisible	auto:C	low	mac 00224710 score 1.0 support 1
 00764830	cSC4BudgetUIWinProc::Update	auto:C	high	mac 002247fe score 1.0 support 1
-007648d0	cSC4BudgetUIWinProc::RegisterMessageNotification	auto:B1	medium	mac 00224612 score 0.929 support 2.5
-00764ad0	cSC4BudgetUIWinProc::HideWindow	auto:C	high	mac 00224d6a score 1.0 support 1
+00764850	cSC4BudgetUIWinProc::RestoreTaxRates	manual:budget-window.tsv	high	budget-window-bodies.md descriptive name, no Mac match; §9; Cancel
+007648d0	cSC4BudgetUIWinProc::RegisterMessageNotification	manual:budget-window.tsv	high	budget-window-bodies.md §8; 0x08DAC3E7, 0x08DAC3E8, 0x86AD10EE
+00764ad0	cSC4BudgetUIWinProc::HideWindow	manual:budget-window.tsv	high	budget-window-bodies.md §8
+00764be0	cSC4BudgetUIWinProc::IssueNewLoans	manual:budget-window.tsv	high	budget-window-bodies.md descriptive name, no Mac match; §10; IssueBond for the loans added
 00764c70	std::vector<cISC4BudgetSimulator::LoanInfo,std::allocator<cISC4BudgetSimulator::LoanInfo>>::~vector	auto:B0	medium	mac 006d03d6 score 0.908 support 1.0
 00764cd0	cSC4BudgetUIWinProc::~cSC4BudgetUIWinProc	auto:C	high	mac 00226fe8 score 1.0 support 1
-00764cf0	cSC4BudgetUIWinProc::RemoveLoanWindow	auto:A	high	mac 00225f22 score 1.0 support 0
-00764d50	cSC4BudgetUIWinProc::PrintPercentageString	auto:A	high	mac 00225ea0 score 1.0 support 0
-00764df0	cSC4BudgetUIWinProc::InitBalanceSheet	auto:A	high	mac 00224e50 score 0.976 support 0
-00765800	cSC4BudgetUIWinProc::SetFormattedAmountInTextControl	auto:B0	medium	mac 00224720 score 0.965 support 4.5
-007658a0	cSC4BudgetUIWinProc::cSC4BudgetUIWinProc	auto:A	high	mac 00226a70 score 0.596 support 0
-00765c30	cSC4BudgetUIWinProc::DisplayLoanWindow	auto:A	high	mac 00227094 score 0.931 support 0
-00766680	cSC4BudgetUIWinProc::UpdateLoanDisplay	auto:A	high	mac 00227f66 score 0.899 support 0
-00766d00	cSC4BudgetUIWinProc::SetTaxes	auto:B1	medium	mac 00224976 score 0.901 support 3.0
-00766e10	cSC4BudgetUIWinProc::Init	auto:A	high	mac 0022a866 score 0.985 support 0
-00767270	cSC4BudgetUIWinProc::CalculateValues	auto:A	high	mac 00225fb4 score 0.918 support 0
-00767990	cSC4BudgetUIWinProc::UpdateBalanceSheetInfo	auto:A	high	mac 00228806 score 0.977 support 0
-00768130	cSC4BudgetUIWinProc::DisplayTaxesWindow	auto:B0	medium	mac 00229680 score 0.983 support 3.0
-00768460	cSC4BudgetUIWinProc::DoSubBudgetWindow	auto:B0	medium	mac 002293ae score 0.957 support 2.5
-00768620	cSC4BudgetUIWinProc::DoMessage	auto:B0	medium	mac 00229358 score 0.976 support 2.5
-00768670	cSC4BudgetUIWinProc::ShowWindow	auto:A	high	mac 00229228 score 1.0 support 0
-00768750	cSC4BudgetUIWinProc::DoWinProcMessage	auto:B0	medium	mac 00229a28 score 0.956 support 24.5
+00764cf0	cSC4BudgetUIWinProc::RemoveLoanWindow	manual:budget-window.tsv	high	budget-window-bodies.md §10
+00764d50	cSC4BudgetUIWinProc::PrintPercentageString	manual:budget-window.tsv	high	budget-window-bodies.md §4.3
+00764df0	cSC4BudgetUIWinProc::InitBalanceSheet	manual:budget-window.tsv	high	budget-window-bodies.md §8 (summary)
+00765800	cSC4BudgetUIWinProc::SetFormattedAmountInTextControl	manual:budget-window.tsv	high	budget-window-bodies.md §4.3
+007658a0	cSC4BudgetUIWinProc::cSC4BudgetUIWinProc	manual:budget-window.tsv	high	budget-window-bodies.md §8 (summary); window 0x96A006B0/0xCBC3C2B9
+00765c30	cSC4BudgetUIWinProc::DisplayLoanWindow	manual:budget-window.tsv	high	budget-window-bodies.md §10
+00766680	cSC4BudgetUIWinProc::UpdateLoanDisplay	manual:budget-window.tsv	high	budget-window-bodies.md §10 (summary)
+00766d00	cSC4BudgetUIWinProc::SetTaxes	manual:budget-window.tsv	high	budget-window-bodies.md §9
+00766e10	cSC4BudgetUIWinProc::Init	manual:budget-window.tsv	high	budget-window-bodies.md §8 (summary)
+00767270	cSC4BudgetUIWinProc::CalculateValues	manual:budget-window.tsv	high	budget-window-bodies.md §4.1
+00767990	cSC4BudgetUIWinProc::UpdateBalanceSheetInfo	manual:budget-window.tsv	high	budget-window-bodies.md §4.2
+007680d0	cSC4BudgetUIWinProc::CloseTaxesWindow	manual:budget-window.tsv	high	budget-window-bodies.md descriptive name, no Mac match; §9; OK
+00768130	cSC4BudgetUIWinProc::DisplayTaxesWindow	manual:budget-window.tsv	high	budget-window-bodies.md §9
+00768460	cSC4BudgetUIWinProc::DoSubBudgetWindow	manual:budget-window.tsv	high	budget-window.md §2
+00768620	cSC4BudgetUIWinProc::DoMessage	manual:budget-window.tsv	high	budget-window.md §7
+00768670	cSC4BudgetUIWinProc::ShowWindow	manual:budget-window.tsv	high	budget-window.md §2.1
+00768750	cSC4BudgetUIWinProc::DoWinProcMessage	manual:budget-window.tsv	high	budget-window.md §2.1; budget-window-bodies.md §8-§10
 007693e0	cSC4BuildingSelectWinProc::QueryInterface	auto:C	high	mac 004fd9dc score 1.0 support 1
 00769400	cRZAutoRefCount<cIGZWinGen>::operator=	auto:D	medium	mac 00622a18 score 0.5 support 1
 00769420	cSC4BuildingSelectWinProc::Init	auto:A	high	mac 004fdd50 score 0.889 support 0
@@ -8705,38 +8708,39 @@ va	name	source	confidence	note
 007795a0	cSC4SubBudgetWindow::set_window_indiv_item	auto:D	medium	mac 002615dc score 0.5 support 1
 00779600	cSC4SubBudgetWindow::get_window_indiv_item	auto:B1	medium	mac 0026164e score 0.94 support 2.5
 00779660	cSC4SubBudgetWindow::add_text	auto:B1	medium	mac 002616ca score 0.928 support 5.0
-00779850	cSC4SubBudgetWindow::end_dialog	auto:B3	medium	mac 00261c86 score 0.92 support 3.0
+00779850	cSC4SubBudgetWindow::end_dialog	manual:budget-window.tsv	high	budget-window.md §6; 0x42B7C353
 007798c0	cSC4SubBudgetWindow::add_comboBox	auto:A	high	mac 002691ee score 0.727 support 0
-00779e50	cSC4SubBudgetWindow::CreateSubBudgetWindow	auto:B1	medium	mac 00265358 score 0.93 support 2.5
+00779e50	cSC4SubBudgetWindow::CreateSubBudgetWindow	manual:budget-window.tsv	high	budget-window.md §3
 0077a120	std::vector<cSC4SubBudgetWindow::SliderInfo,std::allocator<cSC4SubBudgetWindow::SliderInfo>>::erase	auto:B6	medium	mac 006de7bc score 0.951 support 1.0
-0077a1a0	cSC4SubBudgetWindow::DestroySubBudgetWindow	auto:B2	medium	mac 0026961a score 0.935 support 2.5
+0077a1a0	cSC4SubBudgetWindow::DestroySubBudgetWindow	manual:budget-window.tsv	high	budget-window.md §6
 0077a250	cSC4SubBudgetWindow::add_Bitmap	auto:B1	medium	mac 002625d2 score 0.938 support 4.0
 0077a390	cSC4SubBudgetWindow::GetBudgetSegment	auto:B0	medium	mac 0026279a score 0.962 support 4.0
 0077a480	cSC4SubBudgetWindow::SetupWindow	auto:A	high	mac 002655a4 score 0.853 support 0
-0077a6f0	cSC4SubBudgetWindow::SetupWindowBig	auto:A	high	mac 002658fe score 0.853 support 0
+0077a6f0	cSC4SubBudgetWindow::SetupWindowBig	manual:budget-window.tsv	high	budget-window.md §4.1
 0077a960	cSC4SubBudgetWindow::SetupWindowIndiv	auto:A	high	mac 00265c58 score 0.784 support 0
+0077ab40	cSC4SubBudgetWindow::ApplyDealEdits	manual:budget-window.tsv	high	budget-window.md descriptive name (the spec's ApplyDealEdits), no Mac match; §5.4; OK 0xCF
 0077ad20	std::vector<cSC4SubBudgetWindow::IndividualRestoreInfo,std::allocator<cSC4SubBudgetWindow::IndividualRestoreInfo>>::erase	auto:B6	medium	mac 006de620 score 0.957 support 1.0
-0077ada0	cSC4SubBudgetWindow::updateOrdinanceBudget	auto:A	high	mac 002628da score 0.717 support 0
+0077ada0	cSC4SubBudgetWindow::updateOrdinanceBudget	manual:budget-window.tsv	high	budget-window-bodies.md §2
 0077b7b0	cSC4SubBudgetWindow::add_image_button1	auto:A	high	mac 00261e94 score 0.583 support 0
 0077b960	cSC4SubBudgetWindow::add_image_button2	auto:A	high	mac 002620f8 score 0.661 support 0
-0077bc90	cSC4SubBudgetWindow::SetOccupantFundingLevel	auto:A	high	mac 0026364e score 0.697 support 0
-0077bec0	cSC4SubBudgetWindow::SetEmptyWindow	auto:B0	medium	mac 00265ef4 score 0.906 support 10.5
+0077bc90	cSC4SubBudgetWindow::SetOccupantFundingLevel	manual:budget-window.tsv	high	budget-window.md §5.5
+0077bec0	cSC4SubBudgetWindow::SetEmptyWindow	manual:budget-window.tsv	high	budget-window.md §4.1
 0077c420	std::vector<cSC4SubBudgetWindow::SliderInfo,std::allocator<cSC4SubBudgetWindow::SliderInfo>>::clear	auto:B5	medium	mac 006de828 score 0.786 support 3.0
-0077c5e0	cSC4SubBudgetWindow::RestoreStartSettings	auto:B0	medium	mac 002638fc score 0.906 support 1.0
-0077c660	cSC4SubBudgetWindow::initOrdinanceBudget	auto:A	high	mac 002678fe score 0.929 support 0
+0077c5e0	cSC4SubBudgetWindow::RestoreStartSettings	manual:budget-window.tsv	high	budget-window.md §5.1
+0077c660	cSC4SubBudgetWindow::initOrdinanceBudget	manual:budget-window.tsv	high	budget-window-bodies.md §2
 0077dab0	cSC4SubBudgetWindow::set_comboBox	auto:A	high	mac 002639be score 0.69 support 0
 0077e420	cSC4SubBudgetWindow::~cSC4SubBudgetWindow	auto:C	high	mac 00269716 score 1.0 support 1
-0077e440	cSC4SubBudgetWindow::on_shutdown	auto:B4	medium	mac 0026a20e score 0.953 support 1.0
-0077e600	cSC4SubBudgetWindow::initNeighborBudget	auto:A	high	mac 0026a2e2 score 0.93 support 0
-00781c90	cSC4SubBudgetWindow::updateNeighborBudget	auto:A	high	mac 0027385e score 0.855 support 0
-00785740	cSC4SubBudgetWindow::updateIndividualBudget	auto:A	high	mac 002646a2 score 0.721 support 0
-007862b0	cSC4SubBudgetWindow::cSC4SubBudgetWindow	auto:A	high	mac 00269b7c score 0.588 support 0
-00786530	cSC4SubBudgetWindow::DoIndividualBudgetWindow	auto:B1	medium	mac 00269f00 score 0.95 support 2.5
-00786690	cSC4SubBudgetWindow::initIndividualBudget	auto:A	high	mac 002666ba score 0.674 support 0
-007876b0	cSC4SubBudgetWindow::on_init	auto:A	high	mac 0026e80e score 0.851 support 0
-007898a0	cSC4SubBudgetWindow::UpdateValues	auto:A	high	mac 00271a46 score 0.814 support 0
-0078b120	cSC4SubBudgetWindow::on_button_activated	auto:B0	medium	mac 0027825c score 0.957 support 14.0
-0078bca0	cSC4SubBudgetWindow::DoWinMsg	auto:A	high	mac 00279028 score 0.515 support 0
+0077e440	cSC4SubBudgetWindow::on_shutdown	manual:budget-window.tsv	high	budget-window.md §4
+0077e600	cSC4SubBudgetWindow::initNeighborBudget	manual:budget-window.tsv	high	budget-window-bodies.md §3
+00781c90	cSC4SubBudgetWindow::updateNeighborBudget	manual:budget-window.tsv	high	budget-window-bodies.md §3
+00785740	cSC4SubBudgetWindow::updateIndividualBudget	manual:budget-window.tsv	high	budget-window-bodies.md §5
+007862b0	cSC4SubBudgetWindow::cSC4SubBudgetWindow	manual:budget-window.tsv	high	budget-window.md §2
+00786530	cSC4SubBudgetWindow::DoIndividualBudgetWindow	manual:budget-window.tsv	high	budget-window.md §2
+00786690	cSC4SubBudgetWindow::initIndividualBudget	manual:budget-window.tsv	high	budget-window-bodies.md §5
+007876b0	cSC4SubBudgetWindow::on_init	manual:budget-window.tsv	high	budget-window.md §4
+007898a0	cSC4SubBudgetWindow::UpdateValues	manual:budget-window.tsv	high	budget-window-bodies.md §6
+0078b120	cSC4SubBudgetWindow::on_button_activated	manual:budget-window.tsv	high	budget-window.md §5
+0078bca0	cSC4SubBudgetWindow::DoWinMsg	manual:budget-window.tsv	high	budget-window.md §4
 0078c200	icf::cSC4PanelUIWinProc::QueryInterface	folded	folded	2 names: cSC4PanelUIWinProc::QueryInterface | cSC4TimeDisplayMiniWindowWinProc::QueryInterface
 0078c230	cSC4TimeDisplayMiniWindowWinProc::Shutdown	auto:C	high	mac 00232cce score 1.0 support 1
 0078c2b0	cSC4TimeDisplayMiniWindowWinProc::EndDialog	auto:B1	medium	mac 00232664 score 0.927 support 1.0
