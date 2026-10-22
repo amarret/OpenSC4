@@ -463,6 +463,9 @@ cSC4ViewInputControlQuery	city tools and input	ui	city-tools-input.md	-	-	-
 cSC4QueryDialogWinProc	city tools and input	ui	city-tools-input.md	-	-	-
 cSC4QueryAutomatonFilter	city tools and input	ui	city-tools-input.md	-	-	-
 cSC4QueryStoplightFilter	city tools and input	ui	city-tools-input.md	-	-	-
+# the place-lot tool (city-tools-input.md §3)
+cSC4ViewInputControlPlaceLot	city tools and input	ui	city-tools-input.md	-	-	-
+cSC4PlaceLotDemolishFilter	city tools and input	ui	city-tools-input.md	-	-	-
 cSC4ViewInputControlCityScroll	city tools and input	ui	view-input-controls.md	-	-	-
 cSC4ViewInputControlLevelTerrain	city tools and input	ui	view-input-controls.md	-	-	-
 cSC4ViewInputControlLabelTool	city tools and input	ui	view-input-controls.md	-	-	-

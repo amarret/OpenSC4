@@ -1954,36 +1954,39 @@ va	name	source	confidence	note
 004bde30	cSC4ViewInputControlLevelTerrain::OnMouseMove	manual:view-input-controls.tsv	high	view-input-controls.md Â§3
 004bdf00	cSCParticleSimulatorBase::AddRef	auto:D	low	mac 004bcb80 score 0.5 support 1
 004bdf10	icf::cSC4ViewInputControlPlaceLot::QueryInterface	folded	folded	2 names: cSC4ViewInputControlPlaceLot::QueryInterface | cSC4ViewInputControlQuery::QueryInterface
+004bdf70	cSC4PlaceLotDemolishFilter::cSC4PlaceLotDemolishFilter	manual:plop-tool.tsv	high	city-tools-input.md descriptive name, no Mac match; §3.12; keeps power poles and lines
 004bdf90	cSC4OccupantFilter::IsOccupantIncluded	manual:occupant-filters.tsv	high	occupant-manager.md descriptive name, no Mac match; §13.2.1; IsOccupantTypeIncluded(GetType())
-004be0a0	cSC4ViewInputControlPlaceLot::DoPlopRingEffectFinished	auto:B1	medium	mac 002d417c score 0.921 support 2.0
+004bdfb0	cSC4PlaceLotDemolishFilter::IsOccupantTypeIncluded	manual:plop-tool.tsv	high	city-tools-input.md descriptive name, no Mac match; §3.12; not 0x2890D4DE or 0x0990B2EA
+004be0a0	cSC4ViewInputControlPlaceLot::DoPlopRingEffectFinished	manual:plop-tool.tsv	high	city-tools-input.md §3.4
 004be0c0	cSC4LotConfigurationFilterMonopoly::cSC4LotConfigurationFilterMonopoly	auto:D	medium	mac 006f8b1e score 0.5 support 1
 004be100	cSC4LotConfigurationFilterByBuildingType::cSC4LotConfigurationFilterByBuildingType	auto:B0	medium	mac 006f8ae4 score 0.945 support 2.0
-004be180	cSC4ViewInputControlPlaceLot::SetPropOccupantDrawAttributes	auto:B0	medium	mac 002d5d4c score 0.947 support 2.0
-004be5d0	cSC4ViewInputControlPlaceLot::GetLotFacingStreetCount	auto:B3	medium	mac 002d4264 score 0.998 support 1.0
-004be750	cSC4ViewInputControlPlaceLot::GetLotCenterAndCellCoverage	auto:B0	medium	mac 002d43d0 score 0.999 support 4.0
-004beab0	cSC4ViewInputControlPlaceLot::CanDemolishLot	auto:B2	medium	mac 002d53aa score 0.993 support 2.0
-004beb70	cSC4ViewInputControlPlaceLot::GetAutomaticFacingAndCellCoverage	auto:B1	medium	mac 002d5476 score 0.963 support 2.0
+004be150	cSC4ViewInputControlPlaceLot::AddPlopAuraEffect	manual:plop-tool.tsv	high	city-tools-input.md descriptive name, no Mac match; §3.12; aura slot 6 with type 2
+004be180	cSC4ViewInputControlPlaceLot::SetPropOccupantDrawAttributes	manual:plop-tool.tsv	high	city-tools-input.md §3.14 (summary)
+004be5d0	cSC4ViewInputControlPlaceLot::GetLotFacingStreetCount	manual:plop-tool.tsv	high	city-tools-input.md §3.11; avenue 4, road 2, street 1
+004be750	cSC4ViewInputControlPlaceLot::GetLotCenterAndCellCoverage	manual:plop-tool.tsv	high	city-tools-input.md §3.9; odd sizes centre on the cell, even on the corner
+004beab0	cSC4ViewInputControlPlaceLot::CanDemolishLot	manual:plop-tool.tsv	high	city-tools-input.md §3.10; dry-run DemolishRegion, flags 0x2800
+004beb70	cSC4ViewInputControlPlaceLot::GetAutomaticFacingAndCellCoverage	manual:plop-tool.tsv	high	city-tools-input.md §3.11; keep the facing unless 4 points better
 004bedd0	cSC4LotConfigurationFilterMonopoly::IsLotConfigurationIncluded	auto:B2	medium	mac 006f8e6e score 0.969 support 2.0
-004beef0	cSC4ViewInputControlPlaceLot::DoUserLotConfigurationTypePick	auto:A	high	mac 002d4a74 score 0.611 support 0
-004bf2f0	cSC4ViewInputControlPlaceLot::DoUserBuildingTypePick	auto:A	high	mac 002d4574 score 0.615 support 0
-004bf6b0	cSC4ViewInputControlPlaceLot::SeekCompatibleNetworks	auto:B0	medium	mac 002d5748 score 0.963 support 1.0
-004bfb30	cSC4ViewInputControlPlaceLot::PickTollBoothLotAndOrientation	auto:A	high	mac 002d5928 score 1.0 support 0
-004c0070	cSC4ViewInputControlPlaceLot::~cSC4ViewInputControlPlaceLot	auto:C	high	mac 002d7f48 score 1.0 support 1
-004c0090	cSC4ViewInputControlPlaceLot::ReleaseLotConfigurationEffects	auto:B1	medium	mac 002d4f76 score 0.978 support 2.0
-004c0300	cSC4ViewInputControlPlaceLot::Shutdown	auto:A	high	mac 002d5224 score 0.518 support 0
-004c0430	cSC4ViewInputControlPlaceLot::cSC4ViewInputControlPlaceLot	auto:A	high	mac 002d7ae4 score 0.567 support 0
-004c0680	cSC4ViewInputControlPlaceLot::GetBuildingPreviewModel	auto:A	high	mac 002d662c score 0.754 support 0
-004c1110	cSC4ViewInputControlPlaceLot::CanPlaceLot	auto:A	high	mac 002d6340 score 1.0 support 0
-004c1360	cSC4ViewInputControlPlaceLot::ChangeLotConfiguration	auto:B0	medium	mac 002d767a score 0.926 support 2.0
-004c13e0	cSC4ViewInputControlPlaceLot::Init	auto:A	high	mac 002d76ae score 0.646 support 0
-004c1740	cSC4ViewInputControlPlaceLot::PlaceLot	auto:A	high	mac 002d814a score 0.944 support 0
-004c2090	cSC4ViewInputControlPlaceLot::SetConstraintFeedback	auto:A	high	mac 002d8d02 score 1.0 support 0
-004c2660	cSC4ViewInputControlPlaceLot::SetVisualUserFeedback	auto:B0	medium	mac 002d9400 score 0.984 support 5.0
-004c2f20	cSC4ViewInputControlPlaceLot::DoMessage	auto:B0	medium	mac 002d9bfa score 0.96 support 4.0
-004c3060	cSC4ViewInputControlPlaceLot::OnKeyDown	auto:A	high	mac 002da480 score 0.77 support 0
-004c3120	cSC4ViewInputControlPlaceLot::OnMouseDownL	auto:B0	medium	mac 002da23a score 0.961 support 2.0
-004c3300	cSC4ViewInputControlPlaceLot::OnMouseMove	auto:A	high	mac 002d9e0a score 1.0 support 0
-004c36c0	cSC4ViewInputControlPlaceLot::OnMouseExit	auto:A	high	mac 002d9d7e score 1.0 support 0
+004beef0	cSC4ViewInputControlPlaceLot::DoUserLotConfigurationTypePick	manual:plop-tool.tsv	high	city-tools-input.md §3.2; 'Lot Plop' list
+004bf2f0	cSC4ViewInputControlPlaceLot::DoUserBuildingTypePick	manual:plop-tool.tsv	high	city-tools-input.md §3.2
+004bf6b0	cSC4ViewInputControlPlaceLot::SeekCompatibleNetworks	manual:plop-tool.tsv	high	city-tools-input.md §3.13 (summary)
+004bfb30	cSC4ViewInputControlPlaceLot::PickTollBoothLotAndOrientation	manual:plop-tool.tsv	high	city-tools-input.md §3.13 (summary); configuration 0xEBF9A440
+004c0070	cSC4ViewInputControlPlaceLot::~cSC4ViewInputControlPlaceLot	manual:plop-tool.tsv	high	city-tools-input.md §3.1
+004c0090	cSC4ViewInputControlPlaceLot::ReleaseLotConfigurationEffects	manual:plop-tool.tsv	high	city-tools-input.md §3.3
+004c0300	cSC4ViewInputControlPlaceLot::Shutdown	manual:plop-tool.tsv	high	city-tools-input.md §3.3
+004c0430	cSC4ViewInputControlPlaceLot::cSC4ViewInputControlPlaceLot	manual:plop-tool.tsv	high	city-tools-input.md §3.1; cost cache -100000, 1000 plops
+004c0680	cSC4ViewInputControlPlaceLot::GetBuildingPreviewModel	manual:plop-tool.tsv	high	city-tools-input.md §3.14 (summary)
+004c1110	cSC4ViewInputControlPlaceLot::CanPlaceLot	manual:plop-tool.tsv	high	city-tools-input.md §3.10; CanCreatePloppedLot, then CanDemolishLot
+004c1360	cSC4ViewInputControlPlaceLot::ChangeLotConfiguration	manual:plop-tool.tsv	high	city-tools-input.md §3.7
+004c13e0	cSC4ViewInputControlPlaceLot::Init	manual:plop-tool.tsv	high	city-tools-input.md §3.2; id 0x88F154FB, candidates, plop cost
+004c1740	cSC4ViewInputControlPlaceLot::PlaceLot	manual:plop-tool.tsv	high	city-tools-input.md §3.12
+004c2090	cSC4ViewInputControlPlaceLot::SetConstraintFeedback	manual:plop-tool.tsv	high	city-tools-input.md §3.14 (summary)
+004c2660	cSC4ViewInputControlPlaceLot::SetVisualUserFeedback	manual:plop-tool.tsv	high	city-tools-input.md §3.14 (summary)
+004c2f20	cSC4ViewInputControlPlaceLot::DoMessage	manual:plop-tool.tsv	high	city-tools-input.md §3.4
+004c3060	cSC4ViewInputControlPlaceLot::OnKeyDown	manual:plop-tool.tsv	high	city-tools-input.md §3.5; rotate commands 0x6A935CD5, 0x6A935CD1
+004c3120	cSC4ViewInputControlPlaceLot::OnMouseDownL	manual:plop-tool.tsv	high	city-tools-input.md §3.6; 1000 plops then EndInput
+004c3300	cSC4ViewInputControlPlaceLot::OnMouseMove	manual:plop-tool.tsv	high	city-tools-input.md §3.7
+004c36c0	cSC4ViewInputControlPlaceLot::OnMouseExit	manual:plop-tool.tsv	high	city-tools-input.md §3.8
 004c3750	QueryDebugOutput	auto:B1	medium	mac 00206c70 score 0.975 support 5.0
 004c37a0	std::vector<unsigned_char,std::allocator<unsigned_char>>::operator[]	auto:D	medium	mac 005f5a4a score 0.5 support 1
 004c37b0	cSC4HoverQueriableOccupantFilter::IsOccupantIncluded	manual:occupant-filters.tsv	high	occupant-manager.md §13.2.6
