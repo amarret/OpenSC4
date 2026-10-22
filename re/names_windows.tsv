@@ -1440,92 +1440,105 @@ va	name	source	confidence	note
 0048c6d0	cSC4MissingPluginDataReporter::DoPostCityInit	auto:B0	medium	mac 001e3af8 score 0.923 support 1.5
 0048c8f0	cSC4MissingPluginDataReporter::DoMessage	auto:B1	medium	mac 001e3c8e score 0.953 support 1.5
 0048c940	cSCParticleSimulatorBase::QueryInterface	auto:C	high	mac 004bcce2 score 1.0 support 1
+0048c960	cSC4ModelBackgroundLoader::Pause	manual:model-maker.tsv	high	model-maker.md §15.5; descriptive name, no Mac match; +0x28 := 1
+0048c970	cSC4ModelBackgroundLoader::Resume	manual:model-maker.tsv	high	model-maker.md §15.5; descriptive name, no Mac match; +0x28 := 0
 0048c9f0	cRZLock::~cRZLock	auto:B0	medium	mac 005f269c score 0.967 support 9.0
-0048ca40	cSC4ModelBackgroundLoader::ExpandLoadRect	auto:B5	medium	mac 0028ce50 score 0.952 support 1.0
-0048cc30	cSC4ModelBackgroundLoader::ClearResourceSet	auto:B0	medium	mac 0028cf2a score 0.987 support 2.0
-0048cc90	cSC4ModelBackgroundLoader::Shutdown	auto:D	medium	mac 0028df7c score 0.5 support 1
-0048cd60	cSC4ModelBackgroundLoader::CancelAllLoadTasks	auto:B0	medium	mac 0028d9d6 score 0.926 support 1.0
-0048cf10	cSC4ModelBackgroundLoader::ReadTunableValues	auto:A	high	mac 0028d198 score 0.8 support 0
-0048d630	cSC4ModelBackgroundLoader::LoadResourcesForOccupant	auto:B0	medium	mac 0028dd8c score 0.989 support 3.0
-0048d800	cSC4ModelBackgroundLoader::ProcessLoadedCells	auto:B3	medium	mac 0028cf84 score 0.978 support 1.0
+0048ca40	cSC4ModelBackgroundLoader::ExpandLoadRect	manual:model-maker.tsv	high	model-maker.md §15.3; max(min_z, M x factor_z)
+0048cc30	cSC4ModelBackgroundLoader::ClearResourceSet	manual:model-maker.tsv	high	model-maker.md §15.3
+0048cc90	cSC4ModelBackgroundLoader::Shutdown	manual:model-maker.tsv	high	model-maker.md §15.1; descriptive name
+0048cd60	cSC4ModelBackgroundLoader::CancelAllLoadTasks	manual:model-maker.tsv	high	model-maker.md §15.3
+0048cf10	cSC4ModelBackgroundLoader::ReadTunableValues	manual:model-maker.tsv	high	model-maker.md §15.2; exemplar 0x6534284A/0x7A4A8458/0x0B579C20 + speed
+0048d630	cSC4ModelBackgroundLoader::LoadResourcesForOccupant	manual:model-maker.tsv	high	model-maker.md §15.4
+0048d800	cSC4ModelBackgroundLoader::ProcessLoadedCells	manual:model-maker.tsv	high	model-maker.md §15.5; minimum cells, then the time limit
+0048da50	cSC4ModelBackgroundLoader::PostCommand	manual:model-maker.tsv	high	model-maker.md §15.4; descriptive name, no Mac match; appends a command for the main thread
 0048daa0	std::vector<PieGraphSeriesInfo,std::allocator<PieGraphSeriesInfo>>::resize	auto:D	medium	mac 006f0bcc score 0.5 support 1
 0048dac0	cSCParticleSimulatorBase::~cSCParticleSimulatorBase	auto:C	high	mac 004bcda2 score 1.0 support 1
-0048dae0	cSC4ModelBackgroundLoader::StartLoadingForZoomAndRotation	auto:B1	medium	mac 0028e598 score 0.964 support 2.0
-0048dcd0	cSC4ModelBackgroundLoader::ContinueLoadTask	auto:B1	medium	mac 0028e744 score 0.856 support 1.5
-0048e170	cSC4ModelBackgroundLoader::ProcessBackgroundThreadToMainThreadCommunications	auto:B4	medium	mac 0028e43c score 0.979 support 2.0
-0048e2b0	cSC4ModelBackgroundLoader::cSC4ModelBackgroundLoader	auto:B3	medium	mac 0028da44 score 0.933 support 2.5
-0048e460	cSC4ModelBackgroundLoader::ThreadFunction	auto:B2	medium	mac 0028e996 score 0.917 support 1.0
-0048e8f0	cSC4ModelBackgroundLoader::StaticBackgroundThreadFunction	auto:B3	low	mac 0028ecaa score 0.948 support 1.0
-0048e900	cSC4ModelBackgroundLoader::Init	auto:B2	medium	mac 0028d7fe score 0.978 support 1.0
-0048eae0	cSC4ModelBackgroundLoader::RefocusLoadToNewViewLocation	auto:B9	medium	mac 0028d8f4 score 0.85 support 1.0
-0048eb50	cSC4ModelMaker::DetermineLoadRadiusAroundVisibleArea	auto:B2	medium	mac 002453f2 score 0.857 support 1.0
-0048ed20	cSC4ModelMaker::ComputeCityExclusionRects	auto:D	medium	mac 002454e8 score 0.5 support 1
+0048dae0	cSC4ModelBackgroundLoader::StartLoadingForZoomAndRotation	manual:model-maker.tsv	high	model-maker.md §15.3
+0048dcd0	cSC4ModelBackgroundLoader::ContinueLoadTask	manual:model-maker.tsv	high	model-maker.md §15.4; spiral, cost 1 or 0.1, 1000 cells waiting
+0048e170	cSC4ModelBackgroundLoader::ProcessBackgroundThreadToMainThreadCommunications	manual:model-maker.tsv	high	model-maker.md §15.5; message 0x86AD10EE
+0048e2b0	cSC4ModelBackgroundLoader::cSC4ModelBackgroundLoader	manual:model-maker.tsv	high	model-maker.md §15.1; 0x188 bytes, default curves
+0048e460	cSC4ModelBackgroundLoader::ThreadFunction	manual:model-maker.tsv	high	model-maker.md §15.4; slice time, budget, commands 0-4, sleep
+0048e8f0	cSC4ModelBackgroundLoader::StaticBackgroundThreadFunction	manual:model-maker.tsv	high	model-maker.md §15.1; thread entry
+0048e900	cSC4ModelBackgroundLoader::Init	manual:model-maker.tsv	high	model-maker.md §15.1; tuning, filter, thread start
+0048ea60	cSC4ModelMaker::GetGZCLSID	manual:model-maker.tsv	high	model-maker.md §1; descriptive name; returns 0xA9C741B3
+0048ea70	cSC4ModelMaker::QueryInterface	manual:model-maker.tsv	high	model-maker.md §1; descriptive name; primary slot 0; 0xA9C741B3, 1, 0x452294AA, 0xE4FDA3D4 (this + 4)
+0048eae0	cSC4ModelBackgroundLoader::RefocusLoadToNewViewLocation	manual:model-maker.tsv	high	model-maker.md §10.2 (a model-maker method; the export name is kept)
+0048eb50	cSC4ModelMaker::DetermineLoadRadiusAroundVisibleArea	manual:model-maker.tsv	high	model-maker.md §7.1; max(min, floor(M / 2^(z+1))), min 8, 8, 6, 6, 6
+0048ed20	cSC4ModelMaker::ComputeCityExclusionRects	manual:model-maker.tsv	high	model-maker.md §7.3; four rectangles around the load rectangle
 0048ee50	cRZStackAllocator<cIS3DModelInstance*,10,1>::New	auto:B3	medium	mac 006d8082 score 0.957 support 2.0
 0048eea0	cRZAutoRefCount<cS3DTextureBinding>::operator=	auto:B3	medium	mac 0062b7c2 score 0.951 support 2.0
 0048eef0	std::bitset<32ul>::test	auto:D	medium	mac 0078fe50 score 0.5 support 1
-0048f090	cSC4ModelMaker::Read	auto:A	high	mac 00247862 score 1.0 support 0
-0048f290	cSC4ModelMaker::ChangeModels	auto:B3	medium	mac 0024a16a score 0.963 support 1.0
-0048f4d0	cSC4ModelMaker::LoadNetworkModels	auto:B1	medium	mac 0024995e score 0.958 support 2.0
-0048f5b0	cSC4ModelMaker::LoadUndergroundConnectionModels	auto:A	high	mac 00245296 score 1.0 support 0
-0048f660	cSC4ModelMaker::UpdateModelLoadRect	auto:B4	medium	mac 0024569c score 0.976 support 2.0
-0048f920	cSC4ModelMaker::CreatePlaceHolderModelInstance	auto:B0	medium	mac 0024557e score 0.999 support 4.0
-0048fa40	cSC4ModelMaker::FindModelTransform	auto:B0	medium	mac 002459a4 score 0.936 support 2.0
+0048ef60	cSC4ModelMaker::Write	manual:model-maker.tsv	high	model-maker.md §4; descriptive name; version 2, the fields of §4
+0048f090	cSC4ModelMaker::Read	manual:model-maker.tsv	high	model-maker.md §4; version 2 only
+0048f290	cSC4ModelMaker::ChangeModels	manual:model-maker.tsv	high	model-maker.md §12.4; scene slot 31 with the change kind (default 3)
+0048f4d0	cSC4ModelMaker::LoadNetworkModels	manual:model-maker.tsv	high	model-maker.md §12.6; networks and power poles
+0048f5b0	cSC4ModelMaker::LoadUndergroundConnectionModels	manual:model-maker.tsv	high	model-maker.md §12.6; pipe and subway connections
+0048f660	cSC4ModelMaker::UpdateModelLoadRect	manual:model-maker.tsv	high	model-maker.md §7.2
+0048f920	cSC4ModelMaker::CreatePlaceHolderModelInstance	manual:model-maker.tsv	high	model-maker.md §20 remainder; missing model data
+0048fa40	cSC4ModelMaker::FindModelTransform	manual:model-maker.tsv	high	model-maker.md §20 remainder; the instance transform
 0048ff50	GZCOM_Interface<cISC4EffectsResource,cISC4EffectsCollection>	auto:D	medium	mac 00788d16 score 0.5 support 1
 0048ffa0	std::operator==	auto:D	medium	mac 006d8100 score 0.5 support 1
-0048fff0	cSC4ModelMaker::DoBuildingCompletionChanged	auto:B6	medium	mac 00249e94 score 0.979 support 3.0
-004902e0	cSC4ModelMaker::AddModel	auto:A	high	mac 00248ce4 score 0.532 support 0
-00490c70	cSC4ModelMaker::LoadModelsCommon	auto:A	high	mac 002490ec score 0.576 support 0
-00491040	cSC4ModelMaker::LoadFoundationModels	auto:A	high	mac 00249518 score 0.816 support 0
+0048fff0	cSC4ModelMaker::DoBuildingCompletionChanged	manual:model-maker.tsv	high	model-maker.md §9.5; sinks unfinished buildings by (1 - c) x extent x 1.05
+004902e0	cSC4ModelMaker::AddModel	manual:model-maker.tsv	high	model-maker.md §20 remainder (outline §14); animated model or S3D key, fallback key, kRenderModelThreshold, placeholder, transform
+00490c70	cSC4ModelMaker::LoadModelsCommon	manual:model-maker.tsv	high	model-maker.md §20 remainder; instance flags 0x40 buildings, 0x80 flora, 0x20 props
+00491040	cSC4ModelMaker::LoadFoundationModels	manual:model-maker.tsv	high	model-maker.md §20 remainder; foundations
 00491210	cSC4OccupantTypesFilter::~cSC4OccupantTypesFilter (body)	manual:occupant-filters.tsv	high	occupant-manager.md descriptive name, no Mac match; §13.2.3; frees the list
-00491230	cSC4ModelMaker::CreateOccupantShadow	auto:B1	medium	mac 0024696c score 0.994 support 10.0
-00491a30	cSC4ModelMaker::LoadPropModels	auto:B0	medium	mac 00249716 score 0.942 support 2.0
-00491ad0	cSC4ModelMaker::cSC4ModelMaker	auto:D	medium	mac 00247a2a score 0.5 support 1
-00491cd0	cSC4ModelMaker::DoTerrainHidingForCells	auto:A	high	mac 00246020 score 0.552 support 0
-00492440	cSC4ModelMaker::DoTerrainHidingForOccupantCells	auto:B0	medium	mac 00246820 score 0.929 support 2.0
-00492530	cSC4ModelMaker::UnloadUnnecessaryModels	auto:B0	medium	mac 00245e1a score 0.962 support 3.0
-00492780	cSC4ModelMaker::RemoveModelsInappropriateForRotation	auto:D	medium	mac 00245d4e score 0.5 support 1
-004929b0	GZCOM_CreatecSC4ModelMaker	auto:B0	medium	mac 00247c62 score 0.939 support 1.0
-004929f0	cSC4ModelMaker::Shutdown	auto:B4	medium	mac 00247da0 score 0.92 support 15.0
-00492cc0	cSC4ModelMaker::RebuildDynamicTexture	auto:B5	medium	mac 002471e4 score 0.977 support 2.5
-004930f0	cSC4ModelMaker::DoLightingChanged	auto:B8	medium	mac 00248b50 score 0.898 support 3.5
-00493340	cSC4ModelMaker::RemoveModels	auto:B1	medium	mac 00249834 score 0.932 support 2.0
+00491230	cSC4ModelMaker::CreateOccupantShadow	manual:model-maker.tsv	high	model-maker.md §20 remainder; power poles
+00491a30	cSC4ModelMaker::LoadPropModels	manual:model-maker.tsv	high	model-maker.md §12.2; props
+00491ad0	cSC4ModelMaker::cSC4ModelMaker	manual:model-maker.tsv	high	model-maker.md §2; vtables 0x00A8EDF8 and 0x00A8EDE0 (save)
+00491c90	cSC4ModelMaker::~cSC4ModelMaker	manual:model-maker.tsv	high	model-maker.md §3.4; descriptive name; the destructor body
+00491cd0	cSC4ModelMaker::DoTerrainHidingForCells	manual:model-maker.tsv	high	model-maker.md §20 remainder
+00492440	cSC4ModelMaker::DoTerrainHidingForOccupantCells	manual:model-maker.tsv	high	model-maker.md §13.1
+00492530	cSC4ModelMaker::UnloadUnnecessaryModels	manual:model-maker.tsv	high	model-maker.md §7.4; free memory <= 32, exclusion rectangles
+00492780	cSC4ModelMaker::RemoveModelsInappropriateForRotation	manual:model-maker.tsv	high	model-maker.md §7.5
+004929b0	GZCOM_CreatecSC4ModelMaker	manual:model-maker.tsv	high	model-maker.md §1
+004929d0	cSC4ModelMaker::~cSC4ModelMaker (deleting destructor)	manual:model-maker.tsv	high	model-maker.md §3.4; descriptive name; 0x00491C90 then GlobalHeapFree on bit 0
+004929f0	cSC4ModelMaker::Shutdown	manual:model-maker.tsv	high	model-maker.md §3.3; descriptive name
+00492cc0	cSC4ModelMaker::RebuildDynamicTexture	manual:model-maker.tsv	high	model-maker.md §20 remainder; five state textures
+004930f0	cSC4ModelMaker::DoLightingChanged	manual:model-maker.tsv	high	model-maker.md §11.1; 0.0001 threshold
+00493340	cSC4ModelMaker::RemoveModels	manual:model-maker.tsv	high	model-maker.md §12.1; terrain un-hidden, instances released
+004933a0	cSC4ModelMaker::ApplyStateEffect	manual:model-maker.tsv	high	model-maker.md §9.1; descriptive name, no Mac match; property 0x09F00E59, states 0 and 2-6
 00493700	cSC4OccupantTypesFilterHashed::IsOccupantTypeIncluded	manual:occupant-filters.tsv	high	occupant-manager.md class name from the exe's ID table (re/class_id_table.tsv); §13.2.3
 00493720	cSC4OccupantTypesFilterHashed::~cSC4OccupantTypesFilterHashed	manual:occupant-filters.tsv	high	occupant-manager.md class name from the exe's ID table (re/class_id_table.tsv); §13.2.3; deleting
-00493750	cSC4ModelMaker::DoOccupantDestroyed	auto:B4	medium	mac 002498c0 score 0.988 support 2.0
-004937d0	cSC4ModelMaker::DoOccupantMoved	auto:B3	medium	mac 00249a7c score 0.958 support 2.0
-00493a00	cSC4ModelMaker::DoOccupantHilighted	auto:B5	medium	mac 00249c86 score 0.973 support 4.0
-00493b90	cSC4ModelMaker::DoOccupantShown	auto:B2	medium	mac 0024888e score 0.937 support 1.0
-00493c80	cSC4ModelMaker::ApplyStateEffectToModels	auto:A	high	mac 0024acfa score 0.638 support 0
-00493d60	cSC4ModelMaker::DoLotStateChanged	auto:B0	medium	mac 0024ae00 score 0.897 support 1.0
-00493ec0	cSC4ModelMaker::FinalRelease	auto:B5	medium	mac 002481ea score 0.971 support 1.0
-00493ef0	cSC4ModelMaker::CreateOccupantFilters	auto:B1	medium	mac 0024823c score 0.936 support 6.5
-00494390	cSC4ModelMaker::AddModels	auto:B0	medium	mac 0024aee0 score 0.938 support 14.0
-00494800	cSC4ModelMaker::Init	auto:B0	medium	mac 00248750 score 0.951 support 2.5
-00494900	cSC4ModelMaker::DoPropStateChanged	auto:B2	medium	mac 0024cd94 score 0.911 support 2.5
-00494970	cSC4ModelMaker::DoOccupantCreated	auto:B4	medium	mac 0024c2cc score 0.976 support 3.0
-00494a30	cSC4ModelMaker::DoOccupantChanged	auto:B3	medium	mac 0024c17e score 0.962 support 3.0
-00494b30	cSC4ModelMaker::EnableDeferredOccupantOperations	auto:B4	medium	mac 0024cd32 score 0.935 support 3.0
-00494da0	cSC4ModelMaker::DoPostCityInit	auto:B3	medium	mac 0024c3ae score 0.976 support 16.5
-00495360	cSC4ModelMaker::OccupantFilterIterationFunction	auto:B1	medium	mac 0024beec score 0.916 support 2.0
-00495430	cSC4ModelMaker::LoadOccupantModelsForZoomAndRotation	auto:A	high	mac 0024b4fa score 0.837 support 0
-004959c0	cSC4ModelMaker::DoViewFilterChange	auto:B1	medium	mac 0024c028 score 0.996 support 1.0
-00495b00	cSC4ModelMaker::DoZoomAndRotationChange	auto:B0	medium	mac 0024bb98 score 0.967 support 2.0
-00495d90	cSC4ModelMaker::DoViewTranslationChange	auto:B2	medium	mac 0024b9bc score 0.958 support 2.0
-00495f10	cSC4ModelMaker::DoMessage	auto:B1	medium	mac 0024ce30 score 0.972 support 15.5
-00496590	cSC4ModelMakerUtility::GetModelProperty1Instance	auto:B1	medium	mac 00205584 score 0.991 support 1.0
-004965b0	cSC4ModelMakerUtility::FoundationOccupantUsesBuildingStyleModels	auto:A	high	mac 0020559a score 1.0 support 0
-004965f0	cSC4ModelMakerUtility::OccupantUsesBuildingStyleModels	auto:A	high	mac 002055e2 score 1.0 support 0
-00496670	cSC4ModelMakerUtility::GetOccupantOrientationAndState	auto:A	high	mac 0020567e score 0.656 support 0
+00493750	cSC4ModelMaker::DoOccupantDestroyed	manual:model-maker.tsv	high	model-maker.md §8.2
+004937d0	cSC4ModelMaker::DoOccupantMoved	manual:model-maker.tsv	high	model-maker.md §8.8 (outline); flora, props and buildings
+00493a00	cSC4ModelMaker::DoOccupantHilighted	manual:model-maker.tsv	high	model-maker.md §8.9
+00493b90	cSC4ModelMaker::DoOccupantShown	manual:model-maker.tsv	high	model-maker.md §8.4; occupant flag 2, terrain hiding, handle visibility
+00493c80	cSC4ModelMaker::ApplyStateEffectToModels	manual:model-maker.tsv	high	model-maker.md §9.3; by occupant type
+00493d60	cSC4ModelMaker::DoLotStateChanged	manual:model-maker.tsv	high	model-maker.md §9.2
+00493ec0	cSC4ModelMaker::FinalRelease	manual:model-maker.tsv	high	model-maker.md §1
+00493ef0	cSC4ModelMaker::CreateOccupantFilters	manual:model-maker.tsv	high	model-maker.md §6.1
+00494290	cSC4ModelMaker::DoOccupantInserted	manual:model-maker.tsv	high	model-maker.md §8.3; descriptive name, no Mac match; 0x99EF1142
+00494310	cSC4ModelMaker::DoOccupantRemoved	manual:model-maker.tsv	high	model-maker.md §8.3; descriptive name, no Mac match; 0x99EF1143
+00494390	cSC4ModelMaker::AddModels	manual:model-maker.tsv	high	model-maker.md §20 remainder (outline §14); by occupant type, zoom and rotation masks, load rectangle test
+004947f0	cSC4ModelMaker::FinalRelease (thunk)	manual:model-maker.tsv	high	model-maker.md §1; descriptive name; this - 4
+00494800	cSC4ModelMaker::Init	manual:model-maker.tsv	high	model-maker.md §3.1; once; filters, PostCityInit/PreSave/PostSave, kModelLODOffset 0-2, load radii
+00494900	cSC4ModelMaker::DoPropStateChanged	manual:model-maker.tsv	high	model-maker.md §9.4; property 0x4A70D491
+00494970	cSC4ModelMaker::DoOccupantCreated	manual:model-maker.tsv	high	model-maker.md §8.1
+00494a30	cSC4ModelMaker::DoOccupantChanged	manual:model-maker.tsv	high	model-maker.md §8.5
+00494b30	cSC4ModelMaker::EnableDeferredOccupantOperations	manual:model-maker.tsv	high	model-maker.md §8.7; replays the queue
+00494da0	cSC4ModelMaker::DoPostCityInit	manual:model-maker.tsv	high	model-maker.md §3.2; -backgroundLoader, -IgnoreMissingModelDataBugs, loader, coordinator, existing occupants, subscriptions
+00495360	cSC4ModelMaker::OccupantFilterIterationFunction	manual:model-maker.tsv	high	model-maker.md §6.3
+00495430	cSC4ModelMaker::LoadOccupantModelsForZoomAndRotation	manual:model-maker.tsv	high	model-maker.md §10.4
+00495970	cSC4ModelMaker::DoDeferOccupantOperations	manual:model-maker.tsv	high	model-maker.md §8.6; descriptive name, no Mac match; 0x49D968C4 counter +0xF0
+004959c0	cSC4ModelMaker::DoViewFilterChange	manual:model-maker.tsv	high	model-maker.md §10.3
+00495b00	cSC4ModelMaker::DoZoomAndRotationChange	manual:model-maker.tsv	high	model-maker.md §10.1
+00495d90	cSC4ModelMaker::DoViewTranslationChange	manual:model-maker.tsv	high	model-maker.md §10.2
+00495f10	cSC4ModelMaker::DoMessage	manual:model-maker.tsv	high	model-maker.md §5; primary slot 3
+00496590	cSC4ModelMakerUtility::GetModelProperty1Instance	manual:model-maker.tsv	high	graphics-formats.md §4.2; model-maker.md §14
+004965b0	cSC4ModelMakerUtility::FoundationOccupantUsesBuildingStyleModels	manual:model-maker.tsv	high	graphics-formats.md §4.2; model-maker.md §14
+004965f0	cSC4ModelMakerUtility::OccupantUsesBuildingStyleModels	manual:model-maker.tsv	high	graphics-formats.md §4.2; model-maker.md §14
+00496670	cSC4ModelMakerUtility::GetOccupantOrientationAndState	manual:model-maker.tsv	high	graphics-formats.md §4.2; model-maker.md §14
 00496790	cSC4ZoomRotationModelChangeOccupantFilter::cSC4ZoomRotationModelChangeOccupantFilter	manual:occupant-filters.tsv	high	occupant-manager.md §13.2.6
 004967b0	cSC4ZoomRotationModelChangeOccupantFilter::SetZoomAndRotation	manual:occupant-filters.tsv	high	occupant-manager.md §13.2.6
 004967e0	cSC4ZoomRotationModelChangeOccupantFilter::IsOccupantIncluded	manual:occupant-filters.tsv	high	occupant-manager.md descriptive name, no Mac match; §13.2.6; placeable object +0x2C
-00496830	cSC4ModelMakerUtility::GetModelInstanceID	auto:D	medium	mac 002059d4 score 0.5 support 1
-00496950	cSC4ModelMakerUtility::GetOccupantModelClass	auto:B0	medium	mac 00205bc2 score 0.993 support 4.0
-00496ac0	cSC4ModelMakerUtility::HasOccupantModelClass	auto:B1	medium	mac 0020582e score 0.998 support 3.0
+00496830	cSC4ModelMakerUtility::GetModelInstanceID	manual:model-maker.tsv	high	graphics-formats.md §4.2; model-maker.md §14
+00496950	cSC4ModelMakerUtility::GetOccupantModelClass	manual:model-maker.tsv	high	graphics-formats.md §4.2; model-maker.md §14
+00496ac0	cSC4ModelMakerUtility::HasOccupantModelClass	manual:model-maker.tsv	high	graphics-formats.md §4.2; model-maker.md §14
 00496c50	std::vector<float,std::allocator<float>>::push_back	auto:D	medium	mac 0067f250 score 0.5 support 1
-00496c90	cSC4ModelMakerUtility::GetAllModelInstanceIDs	auto:A	high	mac 00205d44 score 0.881 support 0
-00497120	cSC4ModelMakerUtility::GetAllModelInstanceIDs	auto:B0	medium	mac 002062a4 score 0.918 support 3.0
-00497180	cSC4ModelMakerUtility::GetModelInstanceID	auto:D	medium	mac 0020632a score 0.5 support 2
+00496c90	cSC4ModelMakerUtility::GetAllModelInstanceIDs	manual:model-maker.tsv	high	graphics-formats.md §4.2; model-maker.md §14
+00497120	cSC4ModelMakerUtility::GetAllModelInstanceIDs	manual:model-maker.tsv	high	graphics-formats.md §4.2; model-maker.md §14
+00497180	cSC4ModelMakerUtility::GetModelInstanceID	manual:model-maker.tsv	high	graphics-formats.md §4.2; model-maker.md §14
 00497220	cSC4Nation::QueryInterface	auto:A	high	mac 001e12d4 score 0.631 support 0
 00497290	cSC4Nation::DoMessage	auto:A	high	mac 001e13d8 score 1.0 support 0
 004972c0	cSC4Nation::Release	auto:C	high	mac 001e134a score 1.0 support 2
@@ -4181,7 +4194,7 @@ va	name	source	confidence	note
 005be2e0	icf::cS3DMaterialManager::CreateMaterialVariant	folded	folded	7 names: cS3DMaterialManager::CreateMaterialVariant | cSC43DRender::GetModelsInVolume | cSC4ViewInputControl::OnMouseDownL | cSC4ViewInputControl::OnMouseDownR | cSC4ViewInputControl::OnMouseMove | cSC4ViewInputControl::OnMouseUpL | cSC4ViewInputControl::OnMouseUpR
 005be300	cSC4SoundDescription::cSC4SoundDescription	auto:D	medium	mac 003dfe90 score 0.5 support 1
 005be3e0	std::vector<cRZAutoRefCount<cIGZBuffer>,std::allocator<cRZAutoRefCount<cIGZBuffer>>>::operator[]	auto:B5	low	mac 0081dcb8 score 0.851 support 1.0
-005bfe60	cSC4ModelBackgroundLoader::BeginLoadTask	auto:B15	medium	mac 0028cdd4 score 0.831 support 1.0
+005bfe60	std::vector<unsigned_long,std::allocator<unsigned_long>>::insert	manual:model-maker.tsv	high	model-maker.md §15.4; shared vector insert, called by four classes (PostCommand, cSC4RegionalCity, cSC4WinMapView, cSC4LightingManager); not a loader method
 005c0bd0	FileChangeNotification::GetWatchedDirectory	auto:D	medium	mac 0002cbc4 score 0.5 support 1
 005c11b0	CreateFontStyleFromSpecification	auto:A	high	mac 002ecc7c score 0.897 support 0
 005c1f80	icf::cGZAlphaBlt::AddRef	folded	folded	2 names: cGZAlphaBlt::AddRef | cGZGraphicSystem::AddRef

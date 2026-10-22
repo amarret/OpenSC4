@@ -94,6 +94,7 @@ generated index: the questions live one file per spec, so read only the file for
 | LU | language-utility |
 | LV | landvalue |
 | MI | model-instances |
+| MM | model-maker |
 | MS | mysims |
 | MW | mysim-windows |
 | NB | neighbors, network-bridges |
@@ -240,6 +241,7 @@ generated index: the questions live one file per spec, so read only the file for
 | lua-host | 0 | 5 | LH4 | questions/lua-host.md |
 | map-view | 11 | 0 | QV12 | questions/map-view.md |
 | model-instances | 5 | 0 | MI14 | questions/model-instances.md |
+| model-maker | 2 | 0 | MM3 | questions/model-maker.md |
 | mysim-windows | 2 | 0 | MW3 | questions/mysim-windows.md |
 | mysims | 0 | 16 | MS17 | questions/mysims.md |
 | neighbors | 0 | 64 | NB20, NG46 | - |
@@ -320,4 +322,4 @@ generated index: the questions live one file per spec, so read only the file for
 | win-grid | 2 | 2 | WG5 | questions/win-grid.md |
 | zone-tool | 1 | 0 | ZT2 | questions/zone-tool.md |
 | zones | 2 | 56 | ZG43, ZQ17 | questions/zones.md |
-| **total** | **468** | **1286** | | |
+| **total** | **470** | **1286** | | |
