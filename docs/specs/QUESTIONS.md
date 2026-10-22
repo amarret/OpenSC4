@@ -253,7 +253,7 @@ generated index: the questions live one file per spec, so read only the file for
 | network-tools | 16 | 4 | NT27 | questions/network-tools.md |
 | network-type-info | 4 | 0 | TI5 | questions/network-type-info.md |
 | occupant-groups | 4 | 0 | OG5 | questions/occupant-groups.md |
-| occupant-manager | 2 | 5 | OM11 | questions/occupant-manager.md |
+| occupant-manager | 1 | 6 | OM11 | questions/occupant-manager.md |
 | occupants-props | 8 | 9 | OP18 | questions/occupants-props.md |
 | ordinance | 0 | 1 | SV3 | - |
 | output-streams | 3 | 4 | OS8 | questions/output-streams.md |
@@ -311,7 +311,7 @@ generated index: the questions live one file per spec, so read only the file for
 | vehicles | 2 | 0 | VH3 | questions/vehicles.md |
 | view-input-controls | 7 | 0 | VIC8 | questions/view-input-controls.md |
 | view-utilities | 2 | 11 | VU14 | questions/view-utilities.md |
-| view3d-window | 5 | 1 | VW7 | questions/view3d-window.md |
+| view3d-window | 3 | 5 | VW9 | questions/view3d-window.md |
 | water-ripples | 4 | 6 | WR11 | questions/water-ripples.md |
 | watercraft | 7 | 0 | WC8 | questions/watercraft.md |
 | web-network | 0 | 0 | - | questions/web-network.md |
@@ -320,4 +320,4 @@ generated index: the questions live one file per spec, so read only the file for
 | win-grid | 2 | 2 | WG5 | questions/win-grid.md |
 | zone-tool | 1 | 0 | ZT2 | questions/zone-tool.md |
 | zones | 2 | 56 | ZG43, ZQ17 | questions/zones.md |
-| **total** | **472** | **1275** | | |
+| **total** | **469** | **1280** | | |

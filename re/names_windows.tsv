@@ -603,7 +603,7 @@ va	name	source	confidence	note
 0043f870	cSC4TutorialSystem::DoMessage	auto:A	high	mac 0003fc0c score 0.713 support 0
 0043fbd0	cSC4TutorialTask::GetString	auto:B1	medium	mac 000d3190 score 0.944 support 2.0
 0043fc70	cSC4TutorialTask::GetNumber	auto:D	medium	mac 000d329c score 0.5 support 1
-0043fd00	cSC4View3DWin::GetRenderer	auto:C	low	mac 0051c18e score 1.0 support 1
+0043fd00	cSC4View3DWin::GetRenderer	manual:city-view.tsv	high	view3d-window.md §6d
 0043fd10	cSC4PoliceSimulator::GetJailPopulation	auto:C	low	mac 00076074 score 1.0 support 1
 0043fde0	RectContainsInclusive	manual:m5path.tsv	high	pathfinder.md: inclusive rect-contains (was vector<TreeNode*>::operator[])
 0043fe10	SpiralIterator::SpiralIterator	auto:B4	medium	mac 0061d480 score 0.948 support 7.0
@@ -1871,6 +1871,7 @@ va	name	source	confidence	note
 004b8f30	cSC4ViewInputControlDemolish::Shutdown	manual:bulldozer-tool.tsv	high	bulldozer-tool.md Â§1
 004b9020	cSC4ViewInputControlDemolish::OnMouseExit	manual:bulldozer-tool.tsv	high	bulldozer-tool.md Â§3
 004b9040	cSC4ViewInputControlDemolish::EndInput	manual:bulldozer-tool.tsv	high	bulldozer-tool.md Â§3
+004b9070	cSC4ViewInputControlDemolish::cSC4ViewInputControlDemolish	manual:city-view.tsv	high	view3d-window.md §6l; writes the class vtable
 004b91c0	cSC4ViewInputControlDemolish::~cSC4ViewInputControlDemolish	manual:bulldozer-tool.tsv	high	bulldozer-tool.md Â§1
 004b91e0	cSC4ViewInputControlDemolish::~cSC4ViewInputControlDemolish (body)	manual:bulldozer-tool.tsv	high	bulldozer-tool.md descriptive name, no Mac match; Â§1
 004b9250	SC4MarkedCellView::AddRegionCells	manual:bulldozer-tool.tsv	high	bulldozer-tool.md descriptive name, no Mac match; Â§4; appends the region's set cells
@@ -8438,6 +8439,7 @@ va	name	source	confidence	note
 00762c80	cSC4AdvisorPopupTracker::Shutdown	auto:C	high	mac 0025fb7c score 1.0 support 1
 00762cd0	cSC4AdvisorPopupTracker::EndDialog	auto:A	high	mac 0025fbe4 score 1.0 support 0
 00762d30	cSC4AdvisorPopupTracker::DoWinProcMessage	auto:A	high	mac 00260322 score 0.704 support 0
+00762e70	cSC4AdvisorPopupTracker::cSC4AdvisorPopupTracker	manual:city-view.tsv	high	view3d-window.md §6l; advisors.md; writes both vtables
 00762eb0	__ZThn4_N23cSC4AdvisorPopupTracker14QueryInterfaceEmPPv	auto:B0	low	mac 006ddcd6 score 0.96 support 1.0
 00762ed0	cSC4AdvisorPopupTracker::~cSC4AdvisorPopupTracker	auto:C	high	mac 002604ac score 1.0 support 1
 00762f20	cSC4AdvisorPopupTracker::SetupDialog	auto:A	high	mac 0025fc6c score 0.797 support 0
@@ -8475,6 +8477,7 @@ va	name	source	confidence	note
 007695f0	cSC4BuildingSelectWinProc::Shutdown	auto:B0	medium	mac 004fdbba score 0.949 support 1.5
 007696b0	cSC4BuildingSelectWinProc::HideWindow	auto:D	low	mac 004fdc92 score 0.5 support 1
 007696d0	cSC4BuildingSelectWinProc::EnableStyleButtons	auto:B1	medium	mac 004fdcaa score 0.945 support 4.0
+00769750	cSC4BuildingSelectWinProc::cSC4BuildingSelectWinProc	manual:city-view.tsv	high	view3d-window.md §6l; writes the class vtable
 00769790	cSC4BuildingSelectWinProc::~cSC4BuildingSelectWinProc	auto:C	high	mac 004fe58e score 1.0 support 1
 00769920	cSC4BuildingSelectWinProc::DoWinProcMessage	auto:A	high	mac 004fe278 score 0.934 support 0
 00769b30	cSC4BuildingSelectWinProc::ShowWindow	auto:A	high	mac 004fe004 score 1.0 support 0
@@ -8509,6 +8512,8 @@ va	name	source	confidence	note
 0076c910	cSC4GraphsViewWinProc::SetTimeScale	auto:A	high	mac 00222702 score 0.599 support 0
 0076ca60	cSC4GraphsViewWinProc::Init	auto:A	high	mac 002227d4 score 0.748 support 0
 0076cc80	cSC4GraphsViewWinProc::DoMessage	auto:B1	medium	mac 0022412c score 0.948 support 1.5
+0076cfe0	cSC4GraphsViewWinProc::cSC4GraphsViewWinProc	manual:city-view.tsv	high	view3d-window.md §6l; writes vtable_1
+0076d080	cSC4GraphsViewWinProc::~cSC4GraphsViewWinProc	manual:city-view.tsv	high	view3d-window.md §6l; resets vtable_1, Shutdown
 0076d3d0	cSC4GraphsViewWinProc::ShowGraph	auto:A	high	mac 00222a72 score 0.775 support 0
 0076e420	cSC4GraphsViewWinProc::ShowWindow	auto:D	medium	mac 00224072 score 0.5 support 1
 0076e470	cSC4GraphsViewWinProc::HideWindow	auto:D	medium	mac 00224008 score 0.5 support 1
@@ -8552,6 +8557,7 @@ va	name	source	confidence	note
 00774070	cSC4NewsTickerWinProc::DoFlipperMessage	auto:B7	medium	mac 002544f8 score 0.983 support 1.5
 00774450	cSC4PanelUIWinProc::~cSC4PanelUIWinProc	auto:C	high	mac 002849c8 score 1.0 support 1
 00774470	cSC4PanelUIWinProc::DoWinProcMessage	auto:A	high	mac 00284a4e score 0.853 support 0
+00774550	cSC4PanelUIWinProc::cSC4PanelUIWinProc	manual:city-view.tsv	high	view3d-window.md §6l; vtable 0x00AB51E4, one zero field
 00774560	icf::cSC4BudgetUIExpenseWinProc::QueryInterface	folded	folded	4 names: cSC4BudgetUIExpenseWinProc::QueryInterface | cSC4BudgetUIIncomeWinProc::QueryInterface | cSC4BudgetUIWinProc::QueryInterface | cSC4PickSimWinProc::QueryInterface
 007745c0	cSC4PickSimWinProc::EndDialog	manual:mysim-windows.tsv	high	mysim-windows.md Â§2
 00774620	cSC4PickSimWinProc::TickSelf	manual:mysim-windows.tsv	high	mysim-windows.md Â§2
@@ -9587,171 +9593,185 @@ va	name	source	confidence	note
 007e54c0	(anonymous_namespace)::cOptionGroupCommand::Parse	manual:graphics-rules.tsv	high	graphics-rules.md Â§4.1; was (anonymous_namespace)::cOptionGroupCommand::EndBlock; slot 5 of 0x00ABBEBC; the group number
 007e5580	cSC4RuleParser::ParseBegin	manual:graphics-rules.tsv	high	graphics-rules.md Â§4; takes the render properties, empties the rules and option groups
 007e5620	cSC4RuleParser::ParseBegin (thunk)	manual:graphics-rules.tsv	high	graphics-rules.md Â§4; descriptive name; virtual-base adjustment
-007e5630	cSC4View3DWin::QueryInterface	auto:C	high	mac 0051c108 score 1.0 support 2
-007e56d0	cSC4View3DWin::AddRef	auto:C	low	mac 0051c166 score 1.0 support 1
-007e56e0	cSC4View3DWin::Release	auto:C	low	mac 0051c174 score 1.0 support 1
+007e5630	cSC4View3DWin::QueryInterface	manual:city-view.tsv	high	view3d-window.md §1
+007e56d0	cSC4View3DWin::AddRef	manual:city-view.tsv	high	view3d-window.md §1
+007e56e0	cSC4View3DWin::Release	manual:city-view.tsv	high	view3d-window.md §1
 007e56f0	icf::cSC4City::GetDemolitionUtility	folded	folded	3 names: cSC4City::GetDemolitionUtility | cSC4PlumbingSimulator::GetWaterImported | cSC4View3DWin::GetKeyAccelerator
-007e5700	cSC4View3DWin::SetKeyAccelerator	auto:C	high	mac 0051c1f0 score 1.0 support 1
-007e5740	cSC4View3DWin::ScrollStop	auto:C	high	mac 0051c232 score 1.0 support 1
-007e5780	cSC4View3DWin::CanZoomIn	auto:C	high	mac 0051c27e score 1.0 support 1
-007e57a0	cSC4View3DWin::CanZoomOut	auto:C	high	mac 0051c2a8 score 1.0 support 1
-007e57c0	cSC4View3DWin::GetCurrentViewFilterInfo	auto:C	high	mac 0051c46e score 1.0 support 1
-007e57e0	cSC4View3DWin::GetCurrentViewLevelInfo	auto:C	high	mac 0051c48c score 1.0 support 1
-007e57f0	cSC4View3DWin::GetCurrentViewLevel	auto:C	low	mac 0051c4a0 score 1.0 support 1
-007e5800	cSC4View3DWin::SetCurrentViewLevel	auto:C	high	mac 0051c4ae score 1.0 support 1
-007e5820	cSC4View3DWin::RemoveAllViewInputControls	auto:C	high	mac 0051c4d6 score 1.0 support 1
-007e5840	cSC4View3DWin::PickTerrain	auto:C	high	mac 0051c4fe score 1.0 support 1
-007e5890	cSC4View3DWin::PickOccupant	auto:C	high	mac 0051c55e score 1.0 support 1
-007e5900	cSC4View3DWin::GetTerrainQueryEnabled	auto:C	low	mac 0051c622 score 1.0 support 1
-007e5910	cSC4View3DWin::InvokeLandscapeTool	auto:B0	medium	mac 0051c632 score 0.942 support 3.0
-007e59b0	cSC4View3DWin::UpdateSpeedButtons	auto:A	high	mac 00520068 score 1.0 support 0
-007e5b00	cSC4View3DWin::UpdateZoomButtons	auto:A	high	mac 0051c704 score 1.0 support 0
-007e5b40	cSC4View3DWin::DoTemporarySimHiddenPause	auto:B3	medium	mac 0051c19c score 0.925 support 2.0
-007e5b70	cSC4View3DWin::DoTemporarySimHiddenResume	auto:B2	medium	mac 0051c804 score 0.942 support 2.0
-007e5ba0	cSC4View3DWin::GZOnCommand	auto:C	low	mac 0051c844 score 1.0 support 1
-007e5bb0	cSC4View3DWin::CreateProgressScreen	auto:B0	medium	mac 0051c86c score 0.931 support 2.0
-007e5c10	cSC4View3DWin::InvokeSecondaryMenu	auto:B0	medium	mac 0051d450 score 0.957 support 5.0
-007e5d20	cSC4View3DWin::CloseSecondaryMenu	auto:C	high	mac 0051c9f8 score 1.0 support 1
-007e5d80	cSC4View3DWin::InvokeTertiaryMenu	auto:B0	medium	mac 0051d594 score 0.957 support 3.0
-007e5e90	cSC4View3DWin::CloseTertiaryMenu	auto:A	high	mac 0051ca66 score 1.0 support 0
-007e5f40	cSC4View3DWin::ChangeTerrainType	auto:B0	medium	mac 0051dc60 score 0.974 support 2.0
-007e5fb0	cSC4View3DWin::ToggleContourDisplay	auto:A	high	mac 0051cdd6 score 1.0 support 0
+007e5700	cSC4View3DWin::SetKeyAccelerator	manual:city-view.tsv	high	view3d-window.md §6d
+007e5740	cSC4View3DWin::ScrollStop	manual:city-view.tsv	high	view3d-window.md §6f
+007e5780	cSC4View3DWin::CanZoomIn	manual:city-view.tsv	high	view3d-window.md §6f
+007e57a0	cSC4View3DWin::CanZoomOut	manual:city-view.tsv	high	view3d-window.md §6f
+007e57c0	cSC4View3DWin::GetCurrentViewFilterInfo	manual:city-view.tsv	high	view3d-window.md §6f
+007e57e0	cSC4View3DWin::GetCurrentViewLevelInfo	manual:city-view.tsv	high	view3d-window.md §6f
+007e57f0	cSC4View3DWin::GetCurrentViewLevel	manual:city-view.tsv	high	view3d-window.md §6f
+007e5800	cSC4View3DWin::SetCurrentViewLevel	manual:city-view.tsv	high	view3d-window.md §6f
+007e5820	cSC4View3DWin::RemoveAllViewInputControls	manual:city-view.tsv	high	view3d-window.md §6e
+007e5840	cSC4View3DWin::PickTerrain	manual:city-view.tsv	high	view3d-window.md §6f
+007e5890	cSC4View3DWin::PickOccupant	manual:city-view.tsv	high	view3d-window.md §6f
+007e5900	cSC4View3DWin::GetTerrainQueryEnabled	manual:city-view.tsv	high	view3d-window.md §6d, §3.1
+007e5910	cSC4View3DWin::InvokeLandscapeTool	manual:city-view.tsv	high	view3d-window.md §6i
+007e5960	cSC4View3DWin::IsCatalogItemWrongViewLevel	manual:city-view.tsv	high	view3d-window.md §6i descriptive name, no Mac match
+007e59b0	cSC4View3DWin::UpdateSpeedButtons	manual:city-view.tsv	high	view3d-window.md §6j
+007e5b00	cSC4View3DWin::UpdateZoomButtons	manual:city-view.tsv	high	view3d-window.md §6f
+007e5b40	cSC4View3DWin::DoTemporarySimHiddenPause	manual:city-view.tsv	high	view3d-window.md §6f
+007e5b70	cSC4View3DWin::DoTemporarySimHiddenResume	manual:city-view.tsv	high	view3d-window.md §6f
+007e5ba0	cSC4View3DWin::GZOnCommand	manual:city-view.tsv	high	view3d-window.md §1
+007e5bb0	cSC4View3DWin::CreateProgressScreen	manual:city-view.tsv	high	view3d-window.md §3
+007e5c10	cSC4View3DWin::InvokeSecondaryMenu	manual:city-view.tsv	high	view3d-window.md §6i, §6i; ui-windows.md §4.3
+007e5d20	cSC4View3DWin::CloseSecondaryMenu	manual:city-view.tsv	high	ui-windows.md §4.2
+007e5d80	cSC4View3DWin::InvokeTertiaryMenu	manual:city-view.tsv	high	view3d-window.md §6i; ui-windows.md §4.4
+007e5e90	cSC4View3DWin::CloseTertiaryMenu	manual:city-view.tsv	high	ui-windows.md §4.1
+007e5f40	cSC4View3DWin::ChangeTerrainType	manual:city-view.tsv	high	view3d-window.md §6f
+007e5fb0	cSC4View3DWin::ToggleContourDisplay	manual:city-view.tsv	high	view3d-window.md §6f
 007e6030	cSC4ToolTipManager::QueryInterface	auto:C	high	mac 0051ce5c score 1.0 support 1
 007e6060	cSC4ToolTipManager::static_tip_timer_callback	auto:A	high	mac 0051cea6 score 1.0 support 0
-007e60b0	cSC4View3DWin::GetViewManager	auto:A	high	mac 0051d412 score 1.0 support 0
-007e60e0	cSC4View3DWin::SetZoom	auto:C	high	mac 0051e7fc score 1.0 support 1
-007e6150	cSC4View3DWin::SetZoomLimits	auto:C	high	mac 0051e84c score 1.0 support 1
-007e61d0	cSC4View3DWin::SetRotation	auto:C	high	mac 0051c2d2 score 1.0 support 1
-007e6220	cSC4View3DWin::RotateLeft	auto:C	high	mac 0051c30e score 1.0 support 1
-007e6270	cSC4View3DWin::RotateRight	auto:C	high	mac 0051c342 score 1.0 support 1
-007e62c0	cSC4View3DWin::ZoomIn	auto:C	high	mac 0051c376 score 1.0 support 1
-007e6320	cSC4View3DWin::ZoomOut	auto:C	high	mac 0051c3c6 score 1.0 support 1
-007e6380	cSC4View3DWin::SetZoomAndRotation	auto:C	high	mac 0051c416 score 1.0 support 1
-007e63f0	cSC4View3DWin::SetCurrentViewFilterInfo	auto:A	high	mac 0051d9fa score 0.553 support 0
-007e6500	cSC4View3DWin::SetCurrentViewLevelInfo	auto:A	high	mac 0051db50 score 1.0 support 0
-007e65e0	cSC4View3DWin::GetCurrentViewInputControl	auto:C	high	mac 0051eee8 score 1.0 support 1
-007e6600	cSC4View3DWin::GZOnCharacter	auto:C	high	mac 00528cfa score 1.0 support 1
-007e66d0	cSC4View3DWin::ProcessKeyDown	auto:D	medium	mac 00528e02 score 0.5 support 1
-007e67d0	cSC4View3DWin::ProcessKeyUp	auto:D	medium	mac 00528f2c score 0.5 support 1
-007e68d0	cSC4View3DWin::GZOnMouseDownL	auto:C	high	mac 00529056 score 1.0 support 1
-007e6a00	cSC4View3DWin::GZOnMouseDownR	auto:B2	medium	mac 005291c6 score 0.96 support 1.0
-007e6b50	cSC4View3DWin::GZOnMouseWheel	auto:C	high	mac 00529b00 score 1.0 support 1
-007e6c60	cSC4View3DWin::RecalcScrollVelocity	auto:A	high	mac 0051f0f6 score 0.798 support 0
-007e6da0	cSC4View3DWin::InvokeZoningTool	auto:B0	medium	mac 00529d3a score 0.955 support 3.0
-007e6e00	cSC4View3DWin::DoBudgetFailure	auto:A	high	mac 0051d6d8 score 1.0 support 0
-007e6e40	cSC4View3DWin::UpdateAmbientLightLevel	auto:B3	medium	mac 0051e134 score 0.942 support 2.0
-007e6ee0	cSC4View3DWin::UpdateDayNightButtons	auto:B1	medium	mac 0051e202 score 0.964 support 4.5
-007e6f60	cSC4View3DWin::ShowMayorSubPanel	auto:A	high	mac 0051e40a score 1.0 support 0
-007e70c0	cSC4View3DWin::DoDayNightMenu	auto:B2	medium	mac 0051e298 score 0.929 support 4.5
-007e7130	cSC4View3DWin::DoDisasterCopingMenu	auto:A	high	mac 0052ead4 score 0.832 support 0
-007e7220	cSC4View3DWin::SetCostIndicatorAlpha	auto:B15	medium	mac 0051c988 score 0.913 support 1.5
-007e7270	cSC4View3DWin::InvokeSecondaryMenu	auto:A	high	mac 00520ae4 score 0.569 support 0
-007e75b0	cSC4View3DWin::RunGlobalTerrainTool	auto:A	high	mac 0051dce4 score 1.0 support 0
-007e77f0	cSC4View3DWin::HideMissionStatusPanel	auto:C	high	mac 0051d28a score 1.0 support 1
-007e7830	cSC4View3DWin::HandleAdviceLinkMessage	auto:A	high	mac 0051e5f0 score 0.943 support 0
+007e60b0	cSC4View3DWin::GetViewManager	manual:city-view.tsv	high	ui-windows.md §3.2
+007e60e0	cSC4View3DWin::SetZoom	manual:city-view.tsv	high	view3d-window.md §6f
+007e6150	cSC4View3DWin::SetZoomLimits	manual:city-view.tsv	high	view3d-window.md §6f
+007e61d0	cSC4View3DWin::SetRotation	manual:city-view.tsv	high	view3d-window.md §6f
+007e6220	cSC4View3DWin::RotateLeft	manual:city-view.tsv	high	view3d-window.md §6f
+007e6270	cSC4View3DWin::RotateRight	manual:city-view.tsv	high	view3d-window.md §6f
+007e62c0	cSC4View3DWin::ZoomIn	manual:city-view.tsv	high	view3d-window.md §6f
+007e6320	cSC4View3DWin::ZoomOut	manual:city-view.tsv	high	view3d-window.md §6f
+007e6380	cSC4View3DWin::SetZoomAndRotation	manual:city-view.tsv	high	view3d-window.md §6f
+007e63f0	cSC4View3DWin::SetCurrentViewFilterInfo	manual:city-view.tsv	high	view3d-window.md §6f
+007e6500	cSC4View3DWin::SetCurrentViewLevelInfo	manual:city-view.tsv	high	view3d-window.md §6f
+007e65e0	cSC4View3DWin::GetCurrentViewInputControl	manual:city-view.tsv	high	view3d-window.md §6e
+007e6600	cSC4View3DWin::GZOnCharacter	manual:city-view.tsv	high	view3d-window.md §6c
+007e66d0	cSC4View3DWin::ProcessKeyDown	manual:city-view.tsv	high	view3d-window.md §6c
+007e67d0	cSC4View3DWin::ProcessKeyUp	manual:city-view.tsv	high	view3d-window.md §6c
+007e68d0	cSC4View3DWin::GZOnMouseDownL	manual:city-view.tsv	high	view3d-window.md §6c
+007e6a00	cSC4View3DWin::GZOnMouseDownR	manual:city-view.tsv	high	view3d-window.md §6c
+007e6b50	cSC4View3DWin::GZOnMouseWheel	manual:city-view.tsv	high	view3d-window.md §6c
+007e6c60	cSC4View3DWin::RecalcScrollVelocity	manual:city-view.tsv	high	view3d-window.md §6f
+007e6da0	cSC4View3DWin::InvokeZoningTool	manual:city-view.tsv	high	view3d-window.md §6i
+007e6e00	cSC4View3DWin::DoBudgetFailure	manual:city-view.tsv	high	view3d-window.md §6h; modal-dialogs.md §4.1
+007e6e40	cSC4View3DWin::UpdateAmbientLightLevel	manual:city-view.tsv	high	view3d-window.md §6j
+007e6ee0	cSC4View3DWin::UpdateDayNightButtons	manual:city-view.tsv	high	view3d-window.md §6i
+007e6f60	cSC4View3DWin::ShowMayorSubPanel	manual:city-view.tsv	high	view3d-window.md §6h
+007e70c0	cSC4View3DWin::DoDayNightMenu	manual:city-view.tsv	high	view3d-window.md §6i
+007e7130	cSC4View3DWin::DoDisasterCopingMenu	manual:city-view.tsv	high	view3d-window.md §6i
+007e7220	cSC4View3DWin::SetCostIndicatorAlpha	manual:city-view.tsv	high	view3d-window.md §6j
+007e7270	cSC4View3DWin::InvokeSecondaryMenu	manual:city-view.tsv	high	view3d-window.md §6i; the catalog-view variant of ui-windows.md §4.3
+007e75b0	cSC4View3DWin::RunGlobalTerrainTool	manual:city-view.tsv	high	view3d-window.md §6i
+007e77f0	cSC4View3DWin::HideMissionStatusPanel	manual:city-view.tsv	high	view3d-window.md §6j
+007e7830	cSC4View3DWin::HandleAdviceLinkMessage	manual:city-view.tsv	high	view3d-window.md §6
 007e7c80	cSC4ToolTipManager::Init	auto:A	high	mac 0051d75e score 0.882 support 0
 007e7ea0	cSC4ToolTipManager::Shutdown	auto:A	high	mac 0051d2d0 score 1.0 support 0
-007e7f90	cSC4View3DWin::KillKeyboardScrolling	auto:B0	medium	mac 0051f258 score 0.882 support 1.0
-007e7fb0	cSC4View3DWin::RemovePersistentViewInputControl	auto:C	high	mac 0051ea1e score 1.0 support 1
-007e8030	cSC4View3DWin::RemoveAllPersistentViewInputControls	auto:C	high	mac 0051ee92 score 1.0 support 1
-007e8090	cSC4View3DWin::SendViewInputControlChangeMessage	auto:A	high	mac 0051e332 score 1.0 support 0
-007e8170	cSC4View3DWin::GZOnMouseUpL	auto:B6	medium	mac 0052937e score 0.965 support 1.0
-007e82e0	cSC4View3DWin::GZOnMouseUpR	auto:C	high	mac 00529534 score 1.0 support 1
-007e8510	cSC4View3DWin::UpdateMayorRatingBar	auto:A	high	mac 00524554 score 0.709 support 0
-007e8a90	cSC4View3DWin::UpdateAlertBorder	auto:A	high	mac 00521ee4 score 0.883 support 0
-007e8b90	cSC4View3DWin::ShowPanel	auto:B1	medium	mac 0051ec30 score 0.989 support 4.0
-007e8ca0	cSC4View3DWin::HidePanel	auto:B0	medium	mac 0051eb20 score 0.829 support 4.0
-007e8e40	cSC4View3DWin::CursorTextChanged	auto:B0	medium	mac 00520656 score 0.941 support 2.0
-007e8f30	cSC4View3DWin::UpdateCostIndicator	auto:B3	medium	mac 0052089e score 0.978 support 1.0
-007e9090	cSC4View3DWin::UpdateCursorTextPositions	auto:B4	medium	mac 00520a1a score 0.957 support 1.0
-007e90f0	cSC4View3DWin::SetCursorTextPosition3D	auto:B6	medium	mac 00520a90 score 0.998 support 1.0
-007e9150	cSC4View3DWin::ObliterateCity	auto:A	high	mac 00523c10 score 1.0 support 0
-007e91e0	cSC4View3DWin::MinimizeUI	auto:A	high	mac 0051ed30 score 1.0 support 0
+007e7f90	cSC4View3DWin::KillKeyboardScrolling	manual:city-view.tsv	high	view3d-window.md §6f
+007e7fb0	cSC4View3DWin::RemovePersistentViewInputControl	manual:city-view.tsv	high	view3d-window.md §6e
+007e8030	cSC4View3DWin::RemoveAllPersistentViewInputControls	manual:city-view.tsv	high	view3d-window.md §6e
+007e8090	cSC4View3DWin::SendViewInputControlChangeMessage	manual:city-view.tsv	high	view3d-window.md §6e
+007e8170	cSC4View3DWin::GZOnMouseUpL	manual:city-view.tsv	high	view3d-window.md §6c
+007e82e0	cSC4View3DWin::GZOnMouseUpR	manual:city-view.tsv	high	view3d-window.md §6c
+007e8510	cSC4View3DWin::UpdateMayorRatingBar	manual:city-view.tsv	high	view3d-window.md §6j
+007e8a90	cSC4View3DWin::UpdateAlertBorder	manual:city-view.tsv	high	view3d-window.md §6j
+007e8b90	cSC4View3DWin::ShowPanel	manual:city-view.tsv	high	view3d-window.md §6h
+007e8ca0	cSC4View3DWin::HidePanel	manual:city-view.tsv	high	view3d-window.md §6h
+007e8e40	cSC4View3DWin::CursorTextChanged	manual:city-view.tsv	high	view3d-window.md §6j
+007e8f30	cSC4View3DWin::UpdateCostIndicator	manual:city-view.tsv	high	view3d-window.md §6j
+007e9090	cSC4View3DWin::UpdateCursorTextPositions	manual:city-view.tsv	high	view3d-window.md §6j
+007e90f0	cSC4View3DWin::SetCursorTextPosition3D	manual:city-view.tsv	high	view3d-window.md §6j
+007e9150	cSC4View3DWin::ObliterateCity	manual:city-view.tsv	high	view3d-window.md §6h
+007e91e0	cSC4View3DWin::MinimizeUI	manual:city-view.tsv	high	view3d-window.md §6h
 007e9300	cSC4ToolTipManager::cSC4ToolTipManager	auto:B0	medium	mac 00524cfa score 0.835 support 2.0
 007e9330	std::list<cRZAutoRefCount<cIGZMessage2>,std::allocator<cRZAutoRefCount<cIGZMessage2>>>::erase	auto:B0	medium	mac 006004b4 score 0.938 support 7.0
 007e9360	std::find_if<std::_List_iterator<cRZAutoRefCount<cIGZMessage2>>,cSC4Message2TypesMatchPredicate>	auto:D	medium	mac 00825ea0 score 0.5 support 1
-007e9390	cSC4View3DWin::RemoveCurrentViewInputControl	auto:A	high	mac 00528bcc score 1.0 support 0
-007e9460	cSC4View3DWin::GZOnMouseMove	auto:B5	medium	mac 005297fe score 0.968 support 2.0
-007e96e0	cSC4View3DWin::GZOnMouseExit	auto:B5	medium	mac 00529c5e score 0.956 support 2.0
-007e97a0	cSC4View3DWin::DoCityObliterated	auto:A	high	mac 0051ebca score 1.0 support 0
+007e9390	cSC4View3DWin::RemoveCurrentViewInputControl	manual:city-view.tsv	high	view3d-window.md §6e
+007e9460	cSC4View3DWin::GZOnMouseMove	manual:city-view.tsv	high	view3d-window.md §6c, §6f
+007e96e0	cSC4View3DWin::GZOnMouseExit	manual:city-view.tsv	high	view3d-window.md §6c
+007e9780	cSC4View3DWin::DoPreCityShutdown	manual:city-view.tsv	high	view3d-window.md §4 descriptive name, no Mac match; message 0x26D31EC2
+007e97a0	cSC4View3DWin::DoCityObliterated	manual:city-view.tsv	high	view3d-window.md §6h
 007e97f0	cSC4ToolTipManager::~cSC4ToolTipManager	auto:B0	medium	mac 00524d92 score 0.981 support 1.0
 007e9850	std::list<cRZAutoRefCount<cISC4Advice>,std::allocator<cRZAutoRefCount<cISC4Advice>>>::pop_front	auto:D	medium	mac 006ddd0c score 0.5 support 1
 007e98c0	std::list<cRZAutoRefCount<cIGZMessage2>,std::allocator<cRZAutoRefCount<cIGZMessage2>>>::push_back	auto:B2	medium	mac 005ff986 score 0.871 support 2.0
-007e9900	cSC4View3DWin::Init	auto:A	high	mac 0051f27c score 0.926 support 0
-007e9db0	cSC4View3DWin::InvokeDisaster	auto:A	high	mac 00521612 score 0.813 support 0
-007e9fa0	cSC4View3DWin::InvokeCatalogItemCommand	auto:A	high	mac 00529dce score 1.0 support 0
-007ea5b0	cSC4View3DWin::DoSave	auto:A	high	mac 00520f5a score 1.0 support 0
-007ea6e0	cSC4View3DWin::UpdateSimulationClock	auto:B1	medium	mac 0051e8d6 score 0.993 support 4.0
-007ea810	cSC4View3DWin::Update24HourClockHover	auto:A	high	mac 00523ce0 score 1.0 support 0
-007ea970	cSC4View3DWin::UpdateBudget	auto:B1	medium	mac 0051df3c score 0.973 support 3.0
-007eaaa0	cSC4View3DWin::UpdatePopulation	auto:B2	medium	mac 0051c75e score 0.956 support 3.0
-007eab60	cSC4View3DWin::UpdateCityName	auto:B2	medium	mac 0051d224 score 0.909 support 3.0
-007eabf0	cSC4View3DWin::UpdateProgressMessage	auto:B5	medium	mac 0051c6a6 score 0.909 support 2.0
-007eac70	cSC4View3DWin::RenderCostIndicator	auto:B0	medium	mac 0051fbee score 0.946 support 2.5
-007eaeb0	cSC4View3DWin::InvokeTertiaryMenu	auto:B0	medium	mac 0052a5fc score 0.949 support 11.0
-007eb320	cSC4View3DWin::DoEstablishCityDialog	auto:A	high	mac 0052188c score 0.64 support 0
-007eb850	cSC4View3DWin::GetGlobalEffectTriggerState	auto:C	high	mac 00522640 score 1.0 support 1
-007eb8a0	cSC4View3DWin::RetractGlobalEffectTrigger	auto:C	high	mac 005207c8 score 1.0 support 1
-007eb970	cSC4View3DWin::UpdateMissionStatusPanel	auto:C	high	mac 0051ef18 score 1.0 support 1
-007ebb20	cSC4View3DWin::UpdateMissionProgress	auto:A	high	mac 005285e6 score 1.0 support 0
+007e9900	cSC4View3DWin::Init	manual:city-view.tsv	high	view3d-window.md §3
+007e9db0	cSC4View3DWin::InvokeDisaster	manual:city-view.tsv	high	view3d-window.md §6i
+007e9fa0	cSC4View3DWin::InvokeCatalogItemCommand	manual:city-view.tsv	high	view3d-window.md §6i
+007ea5b0	cSC4View3DWin::DoSave	manual:city-view.tsv	high	view3d-window.md §6k
+007ea6e0	cSC4View3DWin::UpdateSimulationClock	manual:city-view.tsv	high	view3d-window.md §6j
+007ea810	cSC4View3DWin::Update24HourClockHover	manual:city-view.tsv	high	view3d-window.md §6j
+007ea970	cSC4View3DWin::UpdateBudget	manual:city-view.tsv	high	view3d-window.md §6j
+007eaaa0	cSC4View3DWin::UpdatePopulation	manual:city-view.tsv	high	view3d-window.md §6j
+007eab60	cSC4View3DWin::UpdateCityName	manual:city-view.tsv	high	view3d-window.md §6j
+007eabf0	cSC4View3DWin::UpdateProgressMessage	manual:city-view.tsv	high	view3d-window.md §6a
+007eac70	cSC4View3DWin::RenderCostIndicator	manual:city-view.tsv	high	view3d-window.md §6j
+007eaeb0	cSC4View3DWin::InvokeTertiaryMenu	manual:city-view.tsv	high	view3d-window.md §6i; the catalog-view popup, 6 arguments
+007eb320	cSC4View3DWin::DoEstablishCityDialog	manual:city-view.tsv	high	view3d-window.md §6h
+007eb850	cSC4View3DWin::GetGlobalEffectTriggerState	manual:city-view.tsv	high	view3d-window.md §6k
+007eb8a0	cSC4View3DWin::RetractGlobalEffectTrigger	manual:city-view.tsv	high	view3d-window.md §6k
+007eb970	cSC4View3DWin::UpdateMissionStatusPanel	manual:city-view.tsv	high	view3d-window.md §6j
+007ebb20	cSC4View3DWin::UpdateMissionProgress	manual:city-view.tsv	high	view3d-window.md §6j
 007ebd30	std::vector<unsigned_long,std::allocator<unsigned_long>>::~vector	auto:B0	medium	mac 005fda44 score 0.992 support 8.0
-007ebd70	cSC4View3DWin::SetCurrentViewInputControl	auto:B0	medium	mac 00528a7c score 0.985 support 1.0
-007ebea0	cSC4View3DWin::AddPersistentViewInputControl	auto:C	high	mac 00522032 score 1.0 support 1
-007ebf30	cSC4View3DWin::DoCityEstablished	auto:A	high	mac 0051e09e score 1.0 support 0
-007ebfa0	cSC4View3DWin::DoLoad	auto:A	high	mac 0052272c score 1.0 support 0
-007ec0b0	cSC4View3DWin::Update24HourClock	auto:A	high	mac 00524274 score 0.665 support 0
-007ec2d0	cSC4View3DWin::DoPanelCommandGUI	auto:A	high	mac 00523ea8 score 1.0 support 0
-007ec620	cSC4View3DWin::DoLandscapeCatalogView	auto:A	high	mac 0052b32e score 1.0 support 0
-007ec680	cSC4View3DWin::DoFloraCatalogView	auto:A	high	mac 0052b294 score 1.0 support 0
-007ec6e0	cSC4View3DWin::DoZoneCatalogView	auto:A	high	mac 0052b102 score 1.0 support 0
-007ec740	cSC4View3DWin::DoZoningMenu	auto:A	high	mac 0052b19c score 1.0 support 0
-007ec800	cSC4View3DWin::SetCostIndicator	auto:B1	medium	mac 0051ff7a score 0.989 support 1.0
-007ec900	cSC4View3DWin::ClearCostIndicator	auto:A	high	mac 0051fef2 score 1.0 support 0
-007ec980	cSC4View3DWin::AddAutomataToItemList	auto:A	high	mac 0052108e score 0.941 support 0
-007ecce0	cSC4View3DWin::AssertGlobalEffectTrigger	auto:C	high	mac 0052266a score 1.0 support 1
-007ecda0	cSC4View3DWin::SetRenderProperties	auto:B0	medium	mac 0051cb32 score 0.984 support 2.5
+007ebd70	cSC4View3DWin::SetCurrentViewInputControl	manual:city-view.tsv	high	view3d-window.md §6e
+007ebea0	cSC4View3DWin::AddPersistentViewInputControl	manual:city-view.tsv	high	view3d-window.md §6e
+007ebf30	cSC4View3DWin::DoCityEstablished	manual:city-view.tsv	high	view3d-window.md §6h
+007ebfa0	cSC4View3DWin::DoLoad	manual:city-view.tsv	high	view3d-window.md §6k
+007ec0b0	cSC4View3DWin::Update24HourClock	manual:city-view.tsv	high	view3d-window.md §6j
+007ec2d0	cSC4View3DWin::DoPanelCommandGUI	manual:city-view.tsv	high	view3d-window.md §6h
+007ec620	cSC4View3DWin::DoLandscapeCatalogView	manual:city-view.tsv	high	view3d-window.md §6i
+007ec680	cSC4View3DWin::DoFloraCatalogView	manual:city-view.tsv	high	view3d-window.md §6i
+007ec6e0	cSC4View3DWin::DoZoneCatalogView	manual:city-view.tsv	high	view3d-window.md §6i
+007ec740	cSC4View3DWin::DoZoningMenu	manual:city-view.tsv	high	view3d-window.md §6i
+007ec800	cSC4View3DWin::SetCostIndicator	manual:city-view.tsv	high	view3d-window.md §6j
+007ec900	cSC4View3DWin::ClearCostIndicator	manual:city-view.tsv	high	view3d-window.md §6j
+007ec980	cSC4View3DWin::AddAutomataToItemList	manual:city-view.tsv	high	view3d-window.md §6i
+007ecce0	cSC4View3DWin::AssertGlobalEffectTrigger	manual:city-view.tsv	high	view3d-window.md §6k
+007ecda0	cSC4View3DWin::SetRenderProperties	manual:city-view.tsv	high	view3d-window.md §3.1
 007ecf45	lib::Catch@007ecf45	library	medium	Function ID
-007ecf60	cSC4View3DWin::ShowMissionStatusPanel	auto:A	high	mac 00528864 score 0.751 support 0
-007ed0f0	cSC4View3DWin::DoPostCityInit	auto:A	high	mac 0052bac8 score 0.515 support 0
-007ed720	cSC4View3DWin::DoLandscapeMenu	auto:A	high	mac 0052b3c2 score 0.973 support 0
-007edcd0	cSC4View3DWin::DoEarnedVehicleCatalogView	auto:A	high	mac 0052ac12 score 1.0 support 0
-007ede30	cSC4View3DWin::SetRenderPropertiesStatic	auto:B1	medium	mac 0051cdb4 score 0.904 support 1.0
-007edeb0	cSC4View3DWin::AddGUI	auto:A	high	mac 005268a6 score 0.879 support 0
-007ef200	cSC4View3DWin::RemoveGUI	auto:B1	medium	mac 00525fb2 score 0.947 support 3.0
-007ef610	cSC4View3DWin::DoVehicleMenu	auto:A	high	mac 0052ad2e score 1.0 support 0
-007ef7a0	cSC4View3DWin::ClearCursorText	auto:C	high	mac 00520786 score 1.0 support 1
-007ef820	cSC4View3DWin::ReadTunableValues	auto:A	high	mac 005201fe score 0.788 support 0
+007ecf60	cSC4View3DWin::ShowMissionStatusPanel	manual:city-view.tsv	high	view3d-window.md §6j
+007ed0f0	cSC4View3DWin::DoPostCityInit	manual:city-view.tsv	high	view3d-window.md §6a
+007ed720	cSC4View3DWin::DoLandscapeMenu	manual:city-view.tsv	high	view3d-window.md §6i
+007edcd0	cSC4View3DWin::DoEarnedVehicleCatalogView	manual:city-view.tsv	high	view3d-window.md §6i
+007ede30	cSC4View3DWin::SetRenderPropertiesStatic	manual:city-view.tsv	high	view3d-window.md §6f, §3.1
+007ede50	cSC4View3DWin::ClearCursorTextEntries	manual:city-view.tsv	high	view3d-window.md §6j descriptive name, no Mac match
+007edeb0	cSC4View3DWin::AddGUI	manual:city-view.tsv	high	view3d-window.md §6b
+007ef200	cSC4View3DWin::RemoveGUI	manual:city-view.tsv	high	view3d-window.md §6b
+007ef610	cSC4View3DWin::DoVehicleMenu	manual:city-view.tsv	high	view3d-window.md §6i
+007ef7a0	cSC4View3DWin::ClearCursorText	manual:city-view.tsv	high	view3d-window.md §6j
+007ef820	cSC4View3DWin::ReadTunableValues	manual:city-view.tsv	high	view3d-window.md §6f
 007efbd0	cSC4ToolTipManager::DoMessage	auto:B0	medium	mac 0051f898 score 0.957 support 3.0
 007efee0	cRZUnknown::operator=	auto:B3	medium	mac 00826680 score 0.804 support 1.0
-007eff40	cSC4View3DWin::AddBuildingsToItemList	auto:A	high	mac 005228aa score 0.848 support 0
-007f06b0	cSC4View3DWin::CreateBuildingMenu	auto:A	high	mac 00523186 score 1.0 support 0
-007f0840	cSC4View3DWin::AddWinAnimationRecorder	auto:A	high	mac 0051cf24 score 1.0 support 0
-007f0a70	cSC4View3DWin::cSC4View3DWin	auto:A	high	mac 00524e74 score 0.874 support 0
-007f0fe0	cSC4View3DWin::GetModelMaker	auto:C	low	mac 00825b88 score 1.0 support 1
-007f0ff0	cSC4View3DWin::SetCostIndicator	auto:C	high	mac 00825b96 score 1.0 support 1
-007f1010	cSC4View3DWin::GetCoverageHelper	auto:C	low	mac 00825bb8 score 1.0 support 1
-007f1020	cSC4View3DWin::SetLastSelectedBuilding	auto:C	high	mac 00825bc6 score 1.0 support 1
-007f1040	cSC4View3DWin::SetLastSelectedLot	auto:C	high	mac 00825bde score 1.0 support 1
-007f1060	cSC4View3DWin::GetLastSelectedBuilding	auto:C	high	mac 00825bf6 score 1.0 support 1
-007f1080	cSC4View3DWin::GetLastSelectedLot	auto:C	high	mac 00825c12 score 1.0 support 1
+007eff40	cSC4View3DWin::AddBuildingsToItemList	manual:city-view.tsv	high	view3d-window.md §6i, §3.1
+007f06b0	cSC4View3DWin::CreateBuildingMenu	manual:city-view.tsv	high	view3d-window.md §6i
+007f0840	cSC4View3DWin::AddWinAnimationRecorder	manual:city-view.tsv	high	view3d-window.md §6g, §3.1
+007f0a70	cSC4View3DWin::cSC4View3DWin	manual:city-view.tsv	high	view3d-window.md §2
+007f0fe0	cSC4View3DWin::GetModelMaker	manual:city-view.tsv	high	view3d-window.md §6d
+007f0ff0	cSC4View3DWin::SetCostIndicator	manual:city-view.tsv	high	view3d-window.md §6j
+007f1010	cSC4View3DWin::GetCoverageHelper	manual:city-view.tsv	high	view3d-window.md §6l
+007f1020	cSC4View3DWin::SetLastSelectedBuilding	manual:city-view.tsv	high	view3d-window.md §6d
+007f1040	cSC4View3DWin::SetLastSelectedLot	manual:city-view.tsv	high	view3d-window.md §6d
+007f1060	cSC4View3DWin::GetLastSelectedBuilding	manual:city-view.tsv	high	view3d-window.md §6d
+007f1080	cSC4View3DWin::GetLastSelectedLot	manual:city-view.tsv	high	view3d-window.md §6d
+007f10a0	cSC4View3DWin::QueryInterface (thunk at +4)	manual:city-view.tsv	high	view3d-window.md §1 descriptive name
+007f10b0	cSC4View3DWin::AddRef (thunk at +4)	manual:city-view.tsv	high	view3d-window.md §1 descriptive name
+007f10c0	cSC4View3DWin::Release (thunk at +4)	manual:city-view.tsv	high	view3d-window.md §1 descriptive name
+007f10d0	cSC4View3DWin::QueryInterface (thunk at +8)	manual:city-view.tsv	high	view3d-window.md §1 descriptive name
+007f10e0	cSC4View3DWin::AddRef (thunk at +8)	manual:city-view.tsv	high	view3d-window.md §1 descriptive name
+007f10f0	cSC4View3DWin::Release (thunk at +8)	manual:city-view.tsv	high	view3d-window.md §1 descriptive name
+007f1100	cSC4View3DWin::QueryInterface (thunk at +0xC)	manual:city-view.tsv	high	view3d-window.md §1 descriptive name
+007f1110	cSC4View3DWin::AddRef (thunk at +0xC)	manual:city-view.tsv	high	view3d-window.md §1 descriptive name
+007f1120	cSC4View3DWin::Release (thunk at +0xC)	manual:city-view.tsv	high	view3d-window.md §1 descriptive name
 007f1130	__ZThn12_N13cSC4View3DWinD0Ev	auto:B0	low	mac 0082753a score 0.96 support 1.0
-007f1320	cSC4View3DWin::Shutdown	auto:B5	medium	mac 005264f6 score 0.967 support 7.5
-007f1640	cSC4View3DWin::AddBackgroundImageToRenderer	auto:A	high	mac 005232b4 score 1.0 support 0
-007f1c10	cSC4View3DWin::ProcessCommand	auto:A	high	mac 0052c908 score 0.703 support 0
-007f3510	cSC4View3DWin::ProcessCheatCode	auto:B0	medium	mac 00522094 score 0.984 support 11.0
-007f39d0	cSC4View3DWin::DoUtilitiesMenu	auto:A	high	mac 0052e866 score 1.0 support 0
-007f3c10	cSC4View3DWin::DoTransportMenu	auto:A	high	mac 0052af2c score 1.0 support 0
-007f3e30	cSC4View3DWin::~cSC4View3DWin	auto:C	high	mac 00525bae score 1.0 support 1
-007f3e50	cSC4View3DWin::DoMessage	auto:A	high	mac 0052b718 score 0.767 support 0
-007f41b0	cSC4View3DWin::DoPreCityInit	auto:A	high	mac 00528030 score 0.758 support 0
-007f4690	cSC4View3DWin::HandleButtonActivated	auto:A	high	mac 0052ec46 score 0.977 support 0
-007f53c0	cSC4View3DWin::DoMessage	auto:A	high	mac 0052c250 score 0.613 support 0
-007f5cf0	cSC4View3DWin::SetCursorText	auto:C	high	mac 0052146e score 1.0 support 1
+007f1140	cSC4View3DWin::~cSC4View3DWin (complete)	manual:city-view.tsv	high	view3d-window.md §4 descriptive name; called by 0x007F3E30
+007f1320	cSC4View3DWin::Shutdown	manual:city-view.tsv	high	view3d-window.md §4
+007f1640	cSC4View3DWin::AddBackgroundImageToRenderer	manual:city-view.tsv	high	view3d-window.md §6l
+007f1c10	cSC4View3DWin::ProcessCommand	manual:city-view.tsv	high	view3d-window.md §6g
+007f3510	cSC4View3DWin::ProcessCheatCode	manual:city-view.tsv	high	view3d-window.md §3.1
+007f39d0	cSC4View3DWin::DoUtilitiesMenu	manual:city-view.tsv	high	view3d-window.md §6i
+007f3c10	cSC4View3DWin::DoTransportMenu	manual:city-view.tsv	high	view3d-window.md §6i
+007f3e30	cSC4View3DWin::~cSC4View3DWin	manual:city-view.tsv	high	view3d-window.md §4
+007f3e50	cSC4View3DWin::DoMessage	manual:city-view.tsv	high	view3d-window.md §5
+007f41b0	cSC4View3DWin::DoPreCityInit	manual:city-view.tsv	high	view3d-window.md §6a
+007f4690	cSC4View3DWin::HandleButtonActivated	manual:city-view.tsv	high	view3d-window.md §6i
+007f53c0	cSC4View3DWin::DoMessage	manual:city-view.tsv	high	view3d-window.md §5
+007f58e0	cSC4View3DWin::FilterWinMessage	manual:city-view.tsv	high	view3d-window.md §6h descriptive name, no Mac match; slot 3 of vtable 0x00ABCE1C
+007f5cf0	cSC4View3DWin::SetCursorText	manual:city-view.tsv	high	view3d-window.md §6j
 007f5f00	cSC4RenderProperties::operator=	auto:B2	medium	mac 0082747a score 0.802 support 1.0
-007f6160	cSC4View3DWin::DoScrollEnd	auto:B2	medium	mac 00523784 score 0.969 support 2.5
-007f6200	cSC4View3DWin::GZPaint	auto:B1	medium	mac 00523836 score 0.983 support 1.0
-007f6410	cSC4View3DWin::DoScrollBegin	auto:B1	medium	mac 00523a80 score 0.932 support 2.0
-007f64f0	cSC4View3DWin::SetScrolling	auto:B2	medium	mac 00523bb2 score 0.973 support 1.0
+007f6160	cSC4View3DWin::DoScrollEnd	manual:city-view.tsv	high	view3d-window.md §6f
+007f6200	cSC4View3DWin::GZPaint	manual:city-view.tsv	high	view3d.md §5.1
+007f6410	cSC4View3DWin::DoScrollBegin	manual:city-view.tsv	high	view3d-window.md §6f
+007f64f0	cSC4View3DWin::SetScrolling	manual:city-view.tsv	high	view3d-window.md §6f
 007f6550	MinOfFourFloats	manual:view-utilities.tsv	high	view-utilities.md Â§6; descriptive name, no Mac match; starts from FLT_MAX (0x00ABCFC0)
 007f65b0	MaxOfFourFloats	manual:view-utilities.tsv	high	view-utilities.md Â§6; descriptive name, no Mac match; starts from -FLT_MAX (0x00ABCFBC)
 007f6620	SC4ViewUtilities::ClipPositionToCity2D	manual:view-utilities.tsv	high	view-utilities.md Â§4.2; descriptive name, no Mac match; [0, +0x20 - 1] x [0, +0x24 - 1]
@@ -16311,7 +16331,7 @@ va	name	source	confidence	note
 009efbc1	lib::__vsnprintf	library	medium	Function ID
 009efc20	lib::_pow	library	medium	Function ID
 009efc60	_CIpow	manual:camera.tsv	high	camera.md Â§2.6; descriptive name; the CRT x87 pow (SSE2 path __CIpow_pentium4 0x009F9B80)
-009efeb0	cSC4BudgetSimulator::PostBondMessage	auto:B0	medium	mac 0018ccd2 score 0.947 support 2.0
+009efeb0	lib::__alldiv	manual:city-view.tsv	high	view3d-window.md §6j; CRT signed 64-bit divide, was a wrong Mac match
 009f0090	cS3DTransform::TransformDirection	auto:B14	medium	mac 0063eb4a score 0.787 support 2.0
 009f00ad	lib::start	library	medium	Function ID
 009f015b	cRZCellMap<bool>::DestroyData	auto:B3	medium	mac 005edf22 score 0.938 support 1.0
@@ -16338,7 +16358,7 @@ va	name	source	confidence	note
 009f0bed	lib::___toupper_mt	library	medium	Function ID
 009f0cb6	lib::_toupper	library	medium	Function ID
 009f0cd8	lib::_atof	library	medium	Function ID
-009f0d10	cRZAutoRefCount<cISC4BudgetSimulator>::operator=	auto:B15	medium	mac 006a89cc score 0.982 support 4.0
+009f0d10	lib::__allmul	manual:city-view.tsv	high	view3d-window.md §6j; CRT 64-bit multiply, was a wrong Mac match
 009f0d44	lib::__fclose_lk	library	medium	Function ID
 009f0d90	lib::_fclose	library	medium	Function ID
 009f0dd9	lib::$L20658	library	medium	Function ID
