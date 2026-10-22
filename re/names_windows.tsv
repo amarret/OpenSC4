@@ -729,18 +729,18 @@ va	name	source	confidence	note
 00448e30	cSC4AnimationTickManager::cSC4AnimationTickManager	auto:A	high	mac 0028fd96 score 1.0 support 0
 00448ff0	GZCOM_CreatecSC4AnimationTickManager	auto:B0	medium	mac 0028ffe6 score 0.919 support 1.0
 00449070	cSC4Preferences::cSC4Preferences	auto:B0	medium	mac 005ee482 score 0.932 support 2.0
-00449250	cSC4App::QueryInterface	auto:C	high	mac 00005ba2 score 1.0 support 2
-00449300	cSC4App::AddRef	auto:C	low	mac 00005c14 score 1.0 support 2
+00449250	cSC4App::QueryInterface	manual:application.tsv	high	application.md §1
+00449300	cSC4App::AddRef	manual:application.tsv	high	application.md §1
 00449310	icf::cSC4AdvisorSystem::Release	folded	folded	3 names: cSC4AdvisorSystem::Release | cSC4App::Release | cSC4TutorialSystem::Release
-00449320	cSC4App::EnableFullGamePauseOnAppFocusLoss	auto:C	high	mac 00005cd2 score 1.0 support 1
-00449380	cSC4App::FullGamePause	auto:B0	medium	mac 00005d20 score 0.877 support 1.0
-004493b0	cSC4App::AddCOMDirectors	auto:B1	medium	mac 0000609a score 0.879 support 1.0
-004494a0	cSC4App::GetPreferences	auto:C	low	mac 0000621c score 1.0 support 1
-004494b0	cSC4App::GetNewCitySpecification	auto:C	low	mac 0000622a score 1.0 support 1
-004494c0	cSC4App::GetDebugFunctionalityEnabled	auto:C	low	mac 00006238 score 1.0 support 1
-004494d0	cSC4App::SetDebugFunctionalityEnabled	auto:C	high	mac 00006248 score 1.0 support 1
-004494e0	cSC4App::GetPopupDialogsEnabled	auto:C	low	mac 0000625a score 1.0 support 1
-004494f0	cSC4App::SetPopupDialogsEnabled	auto:C	high	mac 0000626a score 1.0 support 1
+00449320	cSC4App::EnableFullGamePauseOnAppFocusLoss	manual:application.tsv	high	application.md §2
+00449380	cSC4App::FullGamePause	manual:application.tsv	high	application.md §7.2
+004493b0	cSC4App::AddCOMDirectors	manual:application.tsv	high	application.md §4.1
+004494a0	cSC4App::GetPreferences	manual:application.tsv	high	application.md §2, §13
+004494b0	cSC4App::GetNewCitySpecification	manual:application.tsv	high	application.md §2
+004494c0	cSC4App::GetDebugFunctionalityEnabled	manual:application.tsv	high	application.md §2
+004494d0	cSC4App::SetDebugFunctionalityEnabled	manual:application.tsv	high	application.md §2
+004494e0	cSC4App::GetPopupDialogsEnabled	manual:application.tsv	high	application.md §2
+004494f0	cSC4App::SetPopupDialogsEnabled	manual:application.tsv	high	application.md §2
 00449560	cRZSysServPtr<cIGZGraphicSystem,7546940ul,3289776732ul>::cRZSysServPtr	auto:D	medium	mac 005ee610 score 0.5 support 5
 004495c0	cRZSysServPtr<cIGZMessageServer2,1696765127ul,83526747ul>::~cRZSysServPtr	auto:B0	medium	mac 005ee75c score 0.803 support 33.0
 0044960a	lib::Catch@0044960a	library	medium	Function ID
@@ -750,120 +750,120 @@ va	name	source	confidence	note
 004496f0	cRZSysServPtr<cIGZLuaScriptServer,1271988521ul,1271988531ul>::cRZSysServPtr	auto:A	high	mac 005ee98a score 1.0 support 0
 00449720	cRZSysServPtr<cIGZDrawSystem,1261347763ul,3945702347ul>::cRZSysServPtr	auto:B0	medium	mac 005eeb2c score 0.917 support 3.0
 00449750	cRZSysServPtr<cIGZUIScriptService,4197802746ul,1513451029ul>::cRZSysServPtr	auto:B0	medium	mac 005eeb92 score 0.917 support 3.0
-004498c0	cSC4App::PreFrameWorkShutdown	auto:C	high	mac 00005930 score 1.0 support 1
-004499d0	cSC4App::SetFontAlias	auto:B1	medium	mac 00005a5e score 0.919 support 1.0
-004499f0	cSC4App::RunMessageServerPump	auto:C	high	mac 00005c36 score 1.0 support 1
-00449a70	cSC4App::RunMessageServer2Pump	auto:C	high	mac 00007012 score 1.0 support 1
-00449af0	cSC4App::PostCityMessage	auto:B0	medium	mac 0000b002 score 0.959 support 3.0
-00449ba0	cSC4App::PostSC4AppMessage	auto:B0	medium	mac 0000b0f0 score 0.997 support 2.0
-00449c70	cSC4App::OnIdle	auto:A	high	mac 0000c696 score 1.0 support 0
-00449dc0	cSC4App::GetAppName	auto:C	high	mac 0000627c score 1.0 support 1
-00449de0	cSC4App::GetDataDirectory	auto:C	high	mac 000062ca score 1.0 support 1
-00449e00	cSC4App::GetCDDataDirectory	auto:C	high	mac 0000638c score 1.0 support 1
-00449e20	cSC4App::GetSkuSpecificDirectory	auto:C	high	mac 0000648a score 1.0 support 1
-00449e40	cSC4App::GetUserDataDirectory	auto:C	high	mac 000064a8 score 1.0 support 1
-00449e80	cSC4App::GetRegionsDirectory	auto:C	high	mac 00006afa score 1.0 support 1
-00449ea0	cSC4App::GetUserPluginDirectory	auto:A	high	mac 00006a60 score 1.0 support 0
-00449f60	cSC4App::GetMySimDirectory	auto:A	high	mac 00006b94 score 1.0 support 0
-00449fc0	cSC4App::GetAlbumDirectory	auto:A	high	mac 00006c2e score 1.0 support 0
-0044a020	cSC4App::GetHTTPCacheDirectory	auto:A	high	mac 00006cc8 score 1.0 support 0
-0044a080	cSC4App::GetTestScriptDirectory	auto:C	high	mac 000068d4 score 1.0 support 1
-0044a0e0	cSC4App::GetExceptionReportsDirectory	auto:A	high	mac 00006dfc score 1.0 support 0
-0044a1c0	cSC4App::ApplyVideoPreferences	auto:C	high	mac 000064c6 score 1.0 support 1
-0044a330	cSC4App::GetAutoVideoPreferences	auto:C	high	mac 000066ec score 1.0 support 1
+004498c0	cSC4App::PreFrameWorkShutdown	manual:application.tsv	high	application.md §5.1
+004499d0	cSC4App::SetFontAlias	manual:application.tsv	high	application.md §14.2
+004499f0	cSC4App::RunMessageServerPump	manual:application.tsv	high	application.md §15
+00449a70	cSC4App::RunMessageServer2Pump	manual:application.tsv	high	application.md §15
+00449af0	cSC4App::PostCityMessage	manual:application.tsv	high	application.md §11
+00449ba0	cSC4App::PostSC4AppMessage	manual:application.tsv	high	application.md §6.3
+00449c70	cSC4App::OnIdle	manual:application.tsv	high	application.md §7.1
+00449dc0	cSC4App::GetAppName	manual:application.tsv	high	application.md §2
+00449de0	cSC4App::GetDataDirectory	manual:application.tsv	high	application.md §9
+00449e00	cSC4App::GetCDDataDirectory	manual:application.tsv	high	application.md §9
+00449e20	cSC4App::GetSkuSpecificDirectory	manual:application.tsv	high	application.md §9
+00449e40	cSC4App::GetUserDataDirectory	manual:application.tsv	high	application.md §9
+00449e80	cSC4App::GetRegionsDirectory	manual:application.tsv	high	application.md §9
+00449ea0	cSC4App::GetUserPluginDirectory	manual:application.tsv	high	application.md §9
+00449f60	cSC4App::GetMySimDirectory	manual:application.tsv	high	application.md §9
+00449fc0	cSC4App::GetAlbumDirectory	manual:application.tsv	high	application.md §9
+0044a020	cSC4App::GetHTTPCacheDirectory	manual:application.tsv	high	application.md §9
+0044a080	cSC4App::GetTestScriptDirectory	manual:application.tsv	high	application.md §9
+0044a0e0	cSC4App::GetExceptionReportsDirectory	manual:application.tsv	high	application.md §9
+0044a1c0	cSC4App::ApplyVideoPreferences	manual:application.tsv	high	application.md §13.3
+0044a330	cSC4App::GetAutoVideoPreferences	manual:application.tsv	high	application.md §13.3
 0044a490	std::vector<cSC4RenderProperty<bool>,std::allocator<cSC4RenderProperty<bool>>>::operator[]	auto:B2	medium	mac 005eef6a score 0.923 support 2.0
 0044a4b0	lib::__find_if<char_const*,struct__STL::_Eq_char_bound<class__STL::char_traits<char>_>_>	library	medium	Function ID
-0044a520	cSC4App::Shutdown	auto:A	high	mac 0000b1e6 score 0.89 support 0
-0044a900	cSC4App::GetAppIniFileName	auto:A	high	mac 000069b0 score 1.0 support 0
-0044a940	cSC4App::GetAppPreferencesFileName	auto:A	high	mac 00006a08 score 1.0 support 0
+0044a520	cSC4App::Shutdown	manual:application.tsv	high	application.md §5.1
+0044a900	cSC4App::GetAppIniFileName	manual:application.tsv	high	application.md §2, §14.3
+0044a940	cSC4App::GetAppPreferencesFileName	manual:application.tsv	high	application.md §2, §13.1
 0044aa00	std::basic_string<char>::find	manual:command-line.tsv	high	command-line.md Â§4; descriptive name; STLport find(char c, pos): npos when pos >= size, else find_if (lib::__find_if 0x0044A4B0); 35 call sites, e.g. the switch-prefix test against '/-\' 0x00ACECC8
 0044abe0	cRZString::cRZString	auto:B2	medium	mac 005edeaa score 0.935 support 7.0
-0044acd0	cSC4App::cSC4App	auto:A	high	mac 00007ba4 score 1.0 support 0
+0044acd0	cSC4App::cSC4App	manual:application.tsv	high	application.md §1
 0044b490	cGZApp::AsIGZSystemService	auto:C	low	mac 005edfbc score 1.0 support 1
-0044b4a0	cSC4App::GetRegion	auto:C	low	mac 005ee07a score 1.0 support 1
-0044b4b0	cSC4App::GetDebugConsole	auto:C	low	mac 005ee0d6 score 1.0 support 1
-0044b4c0	cSC4App::GetGimexFactory	auto:C	low	mac 005ee0ee score 1.0 support 1
-0044b4d0	cSC4App::GetStringDetokenizer	auto:C	low	mac 005ee106 score 1.0 support 1
-0044b4e0	cSC4App::GetWinLocationSaver	auto:C	low	mac 005ee11e score 1.0 support 1
+0044b4a0	cSC4App::GetRegion	manual:application.tsv	high	application.md §2
+0044b4b0	cSC4App::GetDebugConsole	manual:application.tsv	high	application.md §2
+0044b4c0	cSC4App::GetGimexFactory	manual:application.tsv	high	application.md §2
+0044b4d0	cSC4App::GetStringDetokenizer	manual:application.tsv	high	application.md §2
+0044b4e0	cSC4App::GetWinLocationSaver	manual:application.tsv	high	application.md §2
 0044b4f0	icf::cSC4App::GetGlyphTextureManager	folded	folded	2 names: cSC4App::GetGlyphTextureManager | cSC4App::IsRunFirstTimeAfterInstall
 0044b500	cSC4App::Unknown_B8	manual:lua-host.tsv	high	cISC4App slot +0xB8; not the Lua getter (was cSC4App::GetLuaInterpreter)
 0044b510	cSC4App::GetTutorialRegistry	manual:lua-host.tsv	high	cISC4App slot +0xC4 (was cSC4App::GetAppDirectory)
-0044b520	cSC4App::GetCDAppDirectory	auto:C	low	mac 000062b0 score 1.0 support 1
-0044b620	cSC4App::GetRegionalCity	auto:C	high	mac 005ee098 score 1.0 support 1
-0044b660	cSC4App::GetRenderProperties	auto:C	low	mac 005ee136 score 1.0 support 1
+0044b520	cSC4App::GetCDAppDirectory	manual:application.tsv	high	application.md §2
+0044b620	cSC4App::GetRegionalCity	manual:application.tsv	high	application.md §2
+0044b660	cSC4App::GetRenderProperties	manual:application.tsv	high	application.md §2
 0044b670	cSC4App::GetLuaInterpreter	manual:lua-host.tsv	high	cISC4App slot +0xBC; lua-host.md Â§1.4 (was cSC4App::GetTutorialRegistry)
 0044b990	cSCStringDetokenizerDefault::cSCStringDetokenizerDefault	auto:B6	medium	mac 005ee784 score 0.837 support 2.0
-0044ba80	cSC4App::IsStartupResolutionOK	auto:A	high	mac 0000cf50 score 1.0 support 0
-0044bc50	cSC4App::ReadPreferences	auto:B1	medium	mac 00005d68 score 0.999 support 3.0
-0044bdb0	cSC4App::SavePreferences	auto:B1	medium	mac 00005f0e score 0.994 support 3.0
-0044bf90	cSC4App::GetPluginDirectory	auto:C	high	mac 0000644e score 1.0 support 1
-0044c010	cSC4App::GetCDPluginDirectory	auto:C	high	mac 0000646c score 1.0 support 1
-0044c090	cSC4App::GetAppPreferencesFilePath	auto:C	high	mac 00006f96 score 1.0 support 1
-0044c170	SC4AppStart	auto:B0	medium	mac 00008302 score 0.927 support 2.5
-0044c2b0	_main	auto:B1	medium	mac 00005886 score 0.866 support 2.0
-0044c300	cSC4App::~cSC4App	auto:C	high	mac 00007640 score 1.0 support 1
-0044c320	cSC4App::Init	auto:A	high	mac 0000b686 score 0.761 support 0
+0044ba80	cSC4App::IsStartupResolutionOK	manual:application.tsv	high	application.md §8
+0044bc50	cSC4App::ReadPreferences	manual:application.tsv	high	application.md §13.1
+0044bdb0	cSC4App::SavePreferences	manual:application.tsv	high	application.md §13.1
+0044bf90	cSC4App::GetPluginDirectory	manual:application.tsv	high	application.md §9
+0044c010	cSC4App::GetCDPluginDirectory	manual:application.tsv	high	application.md §9
+0044c090	cSC4App::GetAppPreferencesFilePath	manual:application.tsv	high	application.md §13.1
+0044c170	SC4AppStart	manual:application.tsv	high	application.md §3
+0044c2b0	_main	manual:application.tsv	high	application.md §3
+0044c300	cSC4App::~cSC4App	manual:application.tsv	high	application.md §1
+0044c320	cSC4App::Init	manual:application.tsv	high	application.md §3.1
 0044ccd0	cSCStringDetokenizerDefault::~cSCStringDetokenizerDefault	auto:C	high	mac 006052b4 score 1.0 support 1
 0044ccf0	cSCStringDetokenizer::~cSCStringDetokenizer	auto:B0	medium	mac 0003ede0 score 0.858 support 1.0
-0044cd70	cSC4App::FixStartupResolutionValuesIfNeeded	auto:B0	medium	mac 0000d0c6 score 1.0 support 1.0
-0044ce40	cSC4App::DoPreferencesChanged	auto:A	high	mac 000070ae score 0.715 support 0
+0044cd70	cSC4App::FixStartupResolutionValuesIfNeeded	manual:application.tsv	high	application.md §8
+0044ce40	cSC4App::DoPreferencesChanged	manual:application.tsv	high	application.md §13.3
 0044d3a0	lib::assign	library	medium	Function ID
 0044d440	std::operator+	auto:B1	medium	mac 005eed22 score 0.839 support 9.0
-0044d4d0	cSC4App::SetFontStyle	auto:B0	medium	mac 00005aa4 score 0.933 support 1.0
-0044d570	cSC4App::GetAppIniFilePath	auto:C	high	mac 00006e96 score 1.0 support 1
+0044d4d0	cSC4App::SetFontStyle	manual:application.tsv	high	application.md §14.2
+0044d570	cSC4App::GetAppIniFilePath	manual:application.tsv	high	application.md §14.3
 0044d760	std::__uninitialized_fill_n_aux<cRZString*,unsigned_long,cRZString>	auto:B6	medium	mac 0061e4d2 score 0.832 support 2.0
-0044d7f0	cSC4App::SetFontStyleStatic	auto:B1	medium	mac 00005b86 score 0.942 support 1.0
-0044d810	cSC4App::SetupWinCtrlMgr	auto:A	high	mac 0000d190 score 0.912 support 0
-0044e980	cSC4App::LaunchExceptionReportUploader	auto:A	high	mac 00009700 score 1.0 support 0
-0044eaf0	cSC4App::AddDynamicLibraryByPath	auto:B1	medium	mac 00010b5a score 0.986 support 3.5
+0044d7f0	cSC4App::SetFontStyleStatic	manual:application.tsv	high	application.md §14.2
+0044d810	cSC4App::SetupWinCtrlMgr	manual:application.tsv	high	application.md §14.2
+0044e980	cSC4App::LaunchExceptionReportUploader	manual:application.tsv	high	application.md §3, §6.2
+0044eaf0	cSC4App::AddDynamicLibraryByPath	manual:application.tsv	high	application.md §14.1
 0044ed40	std::basic_string<char>::assign	manual:command-line.tsv	high	command-line.md Â§4.2; descriptive name; STLport assign(string const& s, pos, n): out_of_range when pos > s.size, else assign(begin + pos, begin + pos + min(n, size - pos)) through 0x00408A70; 21 call sites
 0044eda0	std::vector<cRZString,std::allocator<cRZString>>::_M_insert_aux	auto:D	medium	mac 005ef4f8 score 0.5 support 1
-0044eed0	cSC4App::ReadCommandLine	auto:A	high	mac 0000e87e score 1.0 support 0
-0044fe70	cSC4App::FindAndPossiblyFixIniFiles	auto:B1	medium	mac 00009ab2 score 0.954 support 4.0
-00450100	cSC4App::FindTestScript	auto:B3	medium	mac 00008b88 score 0.95 support 2.0
-00450350	cSC4App::AddSystemServices	auto:A	high	mac 00009ebc score 0.8 support 0
-00451260	cSC4App::AddCodePlugins	auto:B0	medium	mac 0000f5b4 score 0.939 support 2.5
-00451a10	cSC4App::AddDynamicLibraryByName	auto:B4	medium	mac 00009924 score 0.907 support 1.0
-00451c30	cSC4App::DoMessage	auto:A	high	mac 00010dfa score 0.897 support 0
-00451ed0	cSC4App::DoMessage	auto:A	high	mac 000097f0 score 0.859 support 0
-00451fd0	cSC4App::FindAndRegisterAllAvailableLanguages	auto:A	high	mac 00008934 score 1.0 support 0
+0044eed0	cSC4App::ReadCommandLine	manual:application.tsv	high	application.md §8
+0044fe70	cSC4App::FindAndPossiblyFixIniFiles	manual:application.tsv	high	application.md §4.2, §14.3
+00450100	cSC4App::FindTestScript	manual:application.tsv	high	application.md §3
+00450350	cSC4App::AddSystemServices	manual:application.tsv	high	application.md §4.2
+00451260	cSC4App::AddCodePlugins	manual:application.tsv	high	application.md §14.1
+00451a10	cSC4App::AddDynamicLibraryByName	manual:application.tsv	high	application.md §14.1
+00451c30	cSC4App::DoMessage	manual:application.tsv	high	application.md §6.1
+00451ed0	cSC4App::DoMessage	manual:application.tsv	high	application.md §6.2
+00451fd0	cSC4App::FindAndRegisterAllAvailableLanguages	manual:application.tsv	high	application.md §3
 004522f0	std::vector<cRZString,std::allocator<cRZString>>::push_back	auto:B0	medium	mac 005ef6cc score 0.928 support 12.0
-00452360	cSC4App::PreFrameWorkInit	auto:A	high	mac 0000fcc0 score 0.902 support 0
-00453240	cSC4App::PostFrameWorkInit	auto:A	high	mac 0000c838 score 0.692 support 0
-00453a30	cSC4App::SetupFontSet	auto:A	high	mac 00008e00 score 0.95 support 0
-00454370	cSC4App::RequestNewCity	auto:C	high	mac 0002cde0 score 1.0 support 1
-004543b0	cSC4App::RequestGoToRegionView	auto:A	high	mac 0002cf9e score 1.0 support 0
-004544c0	cSC4App::Quit	auto:B2	medium	mac 0002d126 score 0.941 support 1.0
-00454510	cSC4App::SaveCityForObliteration	auto:B3	medium	mac 0002d1f0 score 0.941 support 2.0
-004545d0	cSC4App::Write	auto:B4	medium	mac 0002d8a2 score 0.964 support 1.0
-00454620	cSC4App::Read	auto:A	high	mac 0002d316 score 1.0 support 0
-004546b0	cSC4App::RequestQuit	auto:A	high	mac 0002e698 score 1.0 support 0
-00454800	cSC4App::RequestQuitFromRegion	auto:A	high	mac 0002e85e score 1.0 support 0
-004548b0	cSC4App::NewCity	auto:A	high	mac 0002d8fe score 0.654 support 0
-00454a10	cSC4App::UnregisterCityDBSegment	auto:B1	medium	mac 0002d18e score 0.936 support 2.0
-00454a60	cSC4App::PartialCloseCity	auto:A	high	mac 0002d44c score 0.573 support 0
-00454b20	cSC4App::RegisterCityDBSegment	auto:B4	medium	mac 0002d802 score 0.993 support 1.0
-00454c10	cSC4App::RequestCloseCity	auto:A	high	mac 0002ce2a score 0.748 support 0
-00454da0	cSC4App::SaveCity	auto:C	high	mac 0002d3c2 score 1.0 support 1
-00454e50	cSC4App::DoCityObliteration	auto:B0	medium	mac 0002d576 score 0.994 support 2.0
-00455060	cSC4App::DoMessage	auto:A	high	mac 0002db48 score 0.578 support 0
-00455330	cSC4App::CloseCity	auto:B1	medium	mac 0002df34 score 0.963 support 1.0
-004555f0	cSC4App::LoadCity	auto:A	high	mac 0002e962 score 0.845 support 0
-00455ae0	cSC4App::RequestSaveCity	auto:A	high	mac 0002e2a2 score 0.883 support 0
-00455e20	cSC4App::SaveCity	auto:A	high	mac 0002ef4c score 0.781 support 0
-00456860	cSC4App::DoLoadCityUI	auto:A	high	mac 0002e10e score 1.0 support 0
-00456910	cSC4App::RequestLoadCity	auto:A	high	mac 0002e180 score 0.754 support 0
+00452360	cSC4App::PreFrameWorkInit	manual:application.tsv	high	application.md §3
+00453240	cSC4App::PostFrameWorkInit	manual:application.tsv	high	application.md §3
+00453a30	cSC4App::SetupFontSet	manual:application.tsv	high	application.md §14.2
+00454370	cSC4App::RequestNewCity	manual:application.tsv	high	application.md §11.1
+004543b0	cSC4App::RequestGoToRegionView	manual:application.tsv	high	application.md §11.3
+004544c0	cSC4App::Quit	manual:application.tsv	high	application.md §5.2
+00454510	cSC4App::SaveCityForObliteration	manual:application.tsv	high	application.md §11.6
+004545d0	cSC4App::Write	manual:application.tsv	high	application.md §11.9
+00454620	cSC4App::Read	manual:application.tsv	high	application.md §11.9
+004546b0	cSC4App::RequestQuit	manual:application.tsv	high	application.md §11.13
+00454800	cSC4App::RequestQuitFromRegion	manual:application.tsv	high	application.md §11.14
+004548b0	cSC4App::NewCity	manual:application.tsv	high	application.md §11.8
+00454a10	cSC4App::UnregisterCityDBSegment	manual:application.tsv	high	application.md §11.5
+00454a60	cSC4App::PartialCloseCity	manual:application.tsv	high	application.md §11.4
+00454b20	cSC4App::RegisterCityDBSegment	manual:application.tsv	high	application.md §11.5
+00454c10	cSC4App::RequestCloseCity	manual:application.tsv	high	application.md §11.2
+00454da0	cSC4App::SaveCity	manual:application.tsv	high	application.md §11.11; foundations.md §3.7
+00454e50	cSC4App::DoCityObliteration	manual:application.tsv	high	application.md §11.6
+00455060	cSC4App::DoMessage	manual:application.tsv	high	application.md §11.15
+00455330	cSC4App::CloseCity	manual:application.tsv	high	application.md §11.4
+004555f0	cSC4App::LoadCity	manual:application.tsv	high	application.md §11.9; foundations.md §3.7
+00455ae0	cSC4App::RequestSaveCity	manual:application.tsv	high	application.md §11.12
+00455e20	cSC4App::SaveCity	manual:application.tsv	high	application.md §11.16; foundations.md §3.7
+00456860	cSC4App::DoLoadCityUI	manual:application.tsv	high	application.md §11.10
+00456910	cSC4App::RequestLoadCity	manual:application.tsv	high	application.md §11.10
 00456a20	cSC4LocalGridHelper::~cSC4LocalGridHelper	auto:B1	low	mac 0007bc0e score 0.861 support 2.0
 00456a30	cRZSysServPtr<cIGZRegistry,2721538364ul,621243294ul>::cRZSysServPtr	auto:A	high	mac 00620b74 score 1.0 support 0
 00456a60	cRZSysServPtr<cIGZRegistry,2721538364ul,621243294ul>::~cRZSysServPtr	auto:B1	medium	mac 00620bb2 score 0.803 support 3.0
 00456aaa	lib::Catch@00456aaa	library	medium	Function ID
 00456ab0	std::list<cRZString,std::allocator<cRZString>>::erase	auto:D	medium	mac 006baaaa score 0.5 support 1
-00456ae0	cSC4App::RegisterDBSegmentDirectoryFilesCallback	auto:B2	medium	mac 00080ebc score 0.913 support 1.5
-00456ba0	cSC4App::CreateDBSegmentCallback	auto:A	high	mac 0008206a score 0.683 support 0
-004572b0	cSC4App::SetupResources	auto:A	high	mac 0008113e score 0.633 support 0
+00456ae0	cSC4App::RegisterDBSegmentDirectoryFilesCallback	manual:application.tsv	high	application.md §14.2
+00456ba0	cSC4App::CreateDBSegmentCallback	manual:application.tsv	high	application.md §14.2
+004572b0	cSC4App::SetupResources	manual:application.tsv	high	application.md §14.2
 004580e0	std::list<cRZString,std::allocator<cRZString>>::push_back	auto:B3	medium	mac 005f50e0 score 0.965 support 4.0
-00458100	cSC4App::RegisterDBSegmentCallback	auto:A	high	mac 00081d18 score 0.691 support 0
-004584a0	cSC4App::LoadRegistry	auto:A	high	mac 0008199a score 1.0 support 0
+00458100	cSC4App::RegisterDBSegmentCallback	manual:application.tsv	high	application.md §14.2
+004584a0	cSC4App::LoadRegistry	manual:application.tsv	high	application.md §14.2
 00458800	cSC4PropOccupant::Shutdown	auto:C	low	mac 001026ae score 1.0 support 1
 00458a40	cSC4Occupant::IsInitialized	auto:C	low	mac 00620c5e score 1.0 support 34
 00458a50	cSC4Occupant::GetHighlight	auto:C	low	mac 00620c86 score 1.0 support 34

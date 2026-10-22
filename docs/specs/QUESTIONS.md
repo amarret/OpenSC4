@@ -180,7 +180,7 @@ generated index: the questions live one file per spec, so read only the file for
 | animated-sprite | 9 | 0 | AS10 | questions/animated-sprite.md |
 | animation-coordinator | 7 | 0 | AC10 | questions/animation-coordinator.md |
 | animation-tick-manager | 4 | 0 | TK5 | questions/animation-tick-manager.md |
-| application | 7 | 2 | AP10 | questions/application.md |
+| application | 9 | 2 | AP12 | questions/application.md |
 | audio-ambience | 1 | 10 | AA12 | questions/audio-ambience.md |
 | aura | 1 | 15 | AU17 | questions/aura.md |
 | automata | 4 | 38 | A5, AM13, AT25 | questions/automata.md |
@@ -322,4 +322,4 @@ generated index: the questions live one file per spec, so read only the file for
 | win-grid | 2 | 2 | WG5 | questions/win-grid.md |
 | zone-tool | 1 | 0 | ZT2 | questions/zone-tool.md |
 | zones | 2 | 56 | ZG43, ZQ17 | questions/zones.md |
-| **total** | **470** | **1286** | | |
+| **total** | **472** | **1286** | | |
