@@ -864,4 +864,44 @@ s = {"Tahoma", "Verdana"}; GetSubstitutions("arial", s, 2) → 0 (keys are exact
 
 FN1-FN17 are answered (FN7-FN14 by re-font-core-answers4; FN15-FN17 by re-font-final-gaps4)
 (archive: `docs/specs/questions/answered/drawing-fonts.md`); open entries, if any, are in
-`docs/specs/questions/drawing-fonts.md`.
+`docs/specs/questions/drawing-fonts.md` (FN18-FN23; FN23 is §15's).
+
+## 14. MXF font files *[compat]*
+
+*Added 2026-10-23 (re-fonts).* The game's own fonts (`Fonts\*.mxf` in the install, 19 files) are ordinary TrueType or
+Type 1 font files, lightly obfuscated:
+
+| Offset | Size | Field |
+|---|---|---|
+| 0 | 4 | magic `MXFN` |
+| 4 | 4 | L, big-endian: how many payload bytes are obfuscated |
+| 8 | 1 | key k |
+| 9 | … | payload: the font file, each byte at a payload offset below L XORed with k |
+
+The font stream (`cGZFontStream`; its opener `0x00896D2F`, exported as `_FT_New_Stream`, is the FreeType stream behind
+`AddFont` and font creation, §12) checks the file: longer than 9 bytes and starting with `MXFN` (read as a big-endian
+word, `0x00896D9A`) → payload base 9 (`+0x80`), L (`+0x84`, byte-swapped) and k (`+0x88`); otherwise the file is read
+as it is (base 0, nothing XORed). `ReadAt(buffer, offset, n)` (`0x00896DDD`) seeks to base + offset, reads, and XORs
+each byte whose offset is below L (`0x00896E09`–`0x00896E3B`); `Read` (`0x00896E4A`) is the FreeType read callback
+around it.
+
+Shipped files (`SimCity 4 Deluxe\Fonts`, all 19): L = 40,000,000 (so the whole payload is obfuscated) and k = `0x9D`.
+Sixteen payloads are TrueType (`00 01 00 00`), three are Type 1 fonts in PFB segments (`80 01`: `Arta`, `Arta
+(Italic)`, `Stoclet ITC TT (Bold)`). Every file's length is a multiple of 10,000 bytes, longer than its font: the tail
+is filler that is not part of the font *[inferred]*.
+
+A writer must emit `MXFN`, L ≥ the font's length (big-endian), the key, then the XORed font *[choice: L = 40,000,000
+and k = `0x9D`, as shipped]*.
+
+## 15. The glyph-cache holder (class `0x8B3255F9`, labelled `cGZDrawFontRenderer`) *[summary; FN23]*
+
+*Added 2026-10-23 (re-fonts).* Identity: [font-renderer.md
+§1](font-renderer.md#1-identity-ownership-and-exact-body-inventory) (class `0x8B3255F9`, 0x450 bytes from
+`0x0082A2B0`, constructor `0x00829F70`, vtable `0x00AC14BC`; it holds the 8-byte default renderer `0x08CDA30B` at
+`+0x43C`). Its cache, in outline: the holder keeps a cache surface and a table from glyph to its place in it. A glyph
+is added (`AddGlyphToCache`, `0x0082A2F0`) at the current pen of the current row; when it does not fit across, a new
+row starts below the tallest glyph of the row; when it does not fit down, the cache is flushed and restarted (or the
+add fails when flushing is not allowed). The glyph's coverage bytes are written through a 256-entry colour table into
+the cache surface's format (8, 16, 24 or 32 bits per pixel). A target that is a hardware surface (interface
+`0xAB300B2B`) draws through its own renderer instead. No coverage is claimed (font-renderer.md FR3 keeps the owner's
+accounting open).

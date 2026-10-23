@@ -10458,8 +10458,9 @@ va	name	source	confidence	note
 008265c0	cSC4Simulator::GetSimSpeed	manual:clock-budget-neighbors.tsv	high	cISC4Simulator vtable 00AB2FB8 slot 27; mov eax,[ecx+3Ch] (COMDAT-folded getter)
 00829910	GZCOM_cGZDrawFontRendererCLSID	auto:A	low	mac 00463bb4 score 1.0 support 0
 00829bc0	__gnu_cxx::hash_set<unsigned_long,__gnu_cxx::hash<unsigned_long>,std::equal_to<unsigned_long>,std::allocator<unsigned_long>>::hash_set	auto:B1	medium	mac 006194b8 score 0.852 support 4.0
-00829f70	cGZDrawFontRenderer::cGZDrawFontRenderer	auto:A	high	mac 00463d88 score 1.0 support 0
-0082a2b0	GZCOM_CreatecGZDrawFontRenderer	auto:B0	medium	mac 00463eae score 0.919 support 1.0
+00829f70	cGZDrawFontRenderer::cGZDrawFontRenderer	manual:fonts.tsv	high	drawing-fonts.md §15
+0082a2b0	GZCOM_CreatecGZDrawFontRenderer	manual:fonts.tsv	high	drawing-fonts.md §15
+0082a2f0	cGZDrawFontRenderer::AddGlyphToCache	manual:fonts.tsv	high	drawing-fonts.md descriptive name, no Mac match; §15; rows, flush when full, 8/16/24/32-bit
 0082abd0	GZCOM_cGZDrawContextAsBufferCLSID	auto:A	low	mac 0045fab8 score 1.0 support 0
 0082acf0	cSC4CatalogItem::GetDescription	auto:C	low	mac 006d4ac4 score 1.0 support 1
 0082ae40	cRZSysServPtr<cIGZDrawSystem,1261347763ul,3945702347ul>::~cRZSysServPtr	auto:D	medium	mac 005eeb6a score 0.5 support 1
@@ -11123,22 +11124,22 @@ va	name	source	confidence	note
 00894144	cGZFontSys::FontFixedInfo::FontFixedInfo	auto:D	medium	mac 006b9864 score 0.5 support 2
 0089415f	std::pair<cRZString_const,cGZFontSys::FontFixedInfo>::~pair	auto:D	medium	mac 006b9930 score 0.5 support 1
 00894172	std::_Rb_tree<cRZString,std::pair<cRZString_const,cGZFontSys::FontFixedInfo>,std::_Select1st<std::pair<cRZString_const,cGZFontSys::FontFixedInfo>>,std::less<cRZString>,std::allocator<std::pair<cRZString_const,cGZFontSys::FontFixedInfo>>>::destroy_node	auto:B0	medium	mac 006b9968 score 0.877 support 1.0
-0089433c	cGZFontSys::GetFontSourceTypeFromFileName	auto:B3	medium	mac 001df548 score 0.926 support 2.0
+0089433c	cGZFontSys::GetFontSourceTypeFromFileName	manual:fonts.tsv	high	drawing-fonts.md §12; extension, else the first 32 bytes
 008945aa	cGZFontSys::FontFixedInfo::FontFixedInfo	auto:B0	medium	mac 006b9a80 score 0.914 support 1.0
 008946f6	std::pair<cRZString_const,cGZFontSys::FontFixedInfo>::pair	auto:B1	medium	mac 006b9b40 score 0.878 support 1.0
 00894740	std::pair<cRZString_const,cGZFontSys::FontFixedInfo>::pair	auto:D	medium	mac 006b9ae8 score 0.5 support 2
-00894864	cGZFontSys::AddAllFontsFromDirectory	auto:B0	medium	mac 001df06e score 0.996 support 5.0
-00894adf	cGZFontSys::FontAcquire	auto:B0	medium	mac 001e03ca score 0.932 support 2.0
+00894864	cGZFontSys::AddAllFontsFromDirectory	manual:fonts.tsv	high	drawing-fonts.md §12; *.tt?, *.pfb, *.mxf, *.otf
+00894adf	cGZFontSys::FontAcquire	manual:fonts.tsv	high	drawing-fonts.md §12; name, alias and style scoring
 00894eea	__gnu_cxx::new_allocator<std::pair<cRZString_const,cGZFontSys::FontFixedInfo>>::construct	auto:B2	medium	mac 006b9b98 score 0.994 support 1.0
 00894f6d	icf::cRZLanguageUtility::SetCountry	folded	folded	2 names: cRZLanguageUtility::SetCountry | cRZSystemService::SetServiceID
-00895268	cGZFontSys::cGZFontSys	auto:A	high	mac 001e0992 score 1.0 support 0
+00895268	cGZFontSys::cGZFontSys	manual:fonts.tsv	high	drawing-fonts.md §12
 008953a9	std::_Rb_tree<cRZString,std::pair<cRZString_const,cGZFontSys::FontFixedInfo>,std::_Select1st<std::pair<cRZString_const,cGZFontSys::FontFixedInfo>>,std::less<cRZString>,std::allocator<std::pair<cRZString_const,cGZFontSys::FontFixedInfo>>>::insert_unique	auto:B0	medium	mac 006b9cb0 score 0.924 support 3.0
-00895564	cGZFontSys::AddFont	auto:B4	medium	mac 001e0b68 score 0.891 support 3.0
-008957d6	cGZFontSys::AddFont	auto:B0	medium	mac 001dff5c score 0.995 support 3.0
-0089595d	cGZFontSys::AddSubstitution	auto:B4	medium	mac 001e086e score 0.964 support 1.0
-00895a1c	cGZFontSys::FontAcquire	auto:A	high	mac 001dfa68 score 0.669 support 0
-00895dcf	cGZFontSys::FontSetName	auto:B1	medium	mac 001df36a score 0.956 support 1.0
-00895e68	cGZFontSys::Init	auto:A	high	mac 001df446 score 1.0 support 0
+00895564	cGZFontSys::AddFont	manual:fonts.tsv	high	drawing-fonts.md §12
+008957d6	cGZFontSys::AddFont	manual:fonts.tsv	high	drawing-fonts.md §12
+0089595d	cGZFontSys::AddSubstitution	manual:fonts.tsv	high	drawing-fonts.md §12
+00895a1c	cGZFontSys::FontAcquire	manual:fonts.tsv	high	drawing-fonts.md §12; name, alias and style scoring
+00895dcf	cGZFontSys::FontSetName	manual:fonts.tsv	high	drawing-fonts.md §12
+00895e68	cGZFontSys::Init	manual:fonts.tsv	high	drawing-fonts.md §12; generic families 5, 6, 9, 10
 00895f2e	__ZThn4_N10cGZFontSys4InitEv	auto:B0	low	mac 006b9da4 score 0.96 support 1.0
 00895f36	cFontCOMDirector::CreateFontSys	auto:B0	medium	mac 007e9752 score 0.88 support 1.0
 00895f7b	cFontCOMDirector::cFontCOMDirector	auto:A	high	mac 007e96cc score 1.0 support 0
@@ -11150,38 +11151,40 @@ va	name	source	confidence	note
 008962a9	cGZFont::SetStyle	auto:C	high	mac 00200cb2 score 1.0 support 1
 008962c4	cGZFont::GetAppropriateCachedBitmapData	auto:C	high	mac 00200cd0 score 1.0 support 1
 0089632d	cGZFont::ReallocateSourceData	auto:C	high	mac 00200cea score 1.0 support 1
-0089645a	cGZFont::GetSubstitutionChar	auto:B1	medium	mac 00200e2e score 0.981 support 1.0
-00896654	cGZFont::SetAntialiasing	auto:C	high	mac 00200fc4 score 1.0 support 1
-00896662	cGZFont::GetAntialiasingGammaCorrection	auto:C	low	mac 00200fd6 score 1.0 support 1
-00896666	cGZFont::GetAntialiasingSharpness	auto:C	low	mac 00200fe2 score 1.0 support 1
-0089666a	cGZFont::GetCodePage	auto:C	high	mac 00200fee score 1.0 support 1
-00896678	cGZFont::SetCodePage	auto:C	low	mac 00201004 score 1.0 support 1
+0089645a	cGZFont::GetSubstitutionChar	manual:fonts.tsv	high	drawing-fonts.md §11; Thai positioning forms
+00896654	cGZFont::SetAntialiasing	manual:fonts.tsv	high	drawing-fonts.md §4
+00896662	cGZFont::GetAntialiasingGammaCorrection	manual:fonts.tsv	high	drawing-fonts.md §4
+00896666	cGZFont::GetAntialiasingSharpness	manual:fonts.tsv	high	drawing-fonts.md §4
+0089666a	cGZFont::GetCodePage	manual:fonts.tsv	high	drawing-fonts.md §4
+00896678	cGZFont::SetCodePage	manual:fonts.tsv	high	drawing-fonts.md §4
 00896684	cGZFont::IsCharEncodingAvailable	auto:C	high	mac 00201018 score 1.0 support 1
-00896692	cGZFont::GetScaling	auto:C	high	mac 002010d2 score 1.0 support 1
-008966a7	cGZFont::GetAdvanceScaling	auto:C	high	mac 002010ea score 1.0 support 1
-008966bb	cGZFont::GetSpacingAdjustment	auto:C	high	mac 00201104 score 1.0 support 1
-008966d0	cGZFont::SetSpacingAdjustment	auto:C	high	mac 0020111c score 1.0 support 1
-008966eb	cGZFont::GetLineHeight	auto:C	low	mac 0020113a score 1.0 support 1
-008966f2	cGZFont::CharHeight	auto:C	low	mac 00201148 score 1.0 support 1
-008966f8	cGZFont::GetSizeAboveBaseline	auto:C	low	mac 00201154 score 1.0 support 1
-00896702	cGZFont::GetSizeBelowBaseline	auto:C	high	mac 00201162 score 1.0 support 1
-0089671f	cGZFont::ConvertCharToUnicode	auto:B6	medium	mac 00201190 score 0.974 support 2.0
-00896808	cGZFont::CalculateCharsToFitInWidth	auto:C	high	mac 00201410 score 1.0 support 1
-00896886	cGZFont::CalculateNumberOfLines	auto:C	high	mac 002014d2 score 1.0 support 1
-008968eb	cGZFont::CalculateWidthOfLines	auto:C	high	mac 00201562 score 1.0 support 1
-00896957	cGZFont::CalculateTextArea	auto:C	high	mac 0020203e score 1.0 support 1
+00896692	cGZFont::GetScaling	manual:fonts.tsv	high	drawing-fonts.md §4
+008966a7	cGZFont::GetAdvanceScaling	manual:fonts.tsv	high	drawing-fonts.md §4; vertical 1
+008966bb	cGZFont::GetSpacingAdjustment	manual:fonts.tsv	high	drawing-fonts.md §4
+008966d0	cGZFont::SetSpacingAdjustment	manual:fonts.tsv	high	drawing-fonts.md §4
+008966eb	cGZFont::GetLineHeight	manual:fonts.tsv	high	drawing-fonts.md §5
+008966f2	cGZFont::CharHeight	manual:fonts.tsv	high	drawing-fonts.md §5
+008966f8	cGZFont::GetSizeAboveBaseline	manual:fonts.tsv	high	drawing-fonts.md §5
+00896702	cGZFont::GetSizeBelowBaseline	manual:fonts.tsv	high	drawing-fonts.md §5
+0089671f	cGZFont::ConvertCharToUnicode	manual:fonts.tsv	high	drawing-fonts.md §6
+00896808	cGZFont::CalculateCharsToFitInWidth	manual:fonts.tsv	high	drawing-fonts.md §8
+00896886	cGZFont::CalculateNumberOfLines	manual:fonts.tsv	high	drawing-fonts.md §8
+008968eb	cGZFont::CalculateWidthOfLines	manual:fonts.tsv	high	drawing-fonts.md §8.2
+00896957	cGZFont::CalculateTextArea	manual:fonts.tsv	high	drawing-fonts.md §8.2
 008969f2	cGZFont::TextArea	auto:C	high	mac 002015e4 score 1.0 support 1
-00896a2d	cGZFont::FormatForEllipsis	auto:C	high	mac 00201868 score 1.0 support 1
+00896a2d	cGZFont::FormatForEllipsis	manual:fonts.tsv	high	drawing-fonts.md §8.3
 00896b45	cGZFont::SetRenderer	auto:C	high	mac 00201814 score 1.0 support 1
 00896b8e	cGZFont::LockSurfaceForFontUse	auto:C	high	mac 002019dc score 1.0 support 1
 00896bc2	cGZFont::UnlockSurfaceForFontUse	auto:C	high	mac 00201a34 score 1.0 support 1
 00896d2f	_FT_New_Stream	auto:A	high	mac 00466aea score 1.0 support 0
+00896ddd	cGZFontStream::ReadAt	manual:fonts.tsv	high	drawing-fonts.md descriptive name, no Mac match; §14; XOR with the key below L
+00896e4a	cGZFontStream::Read	manual:fonts.tsv	high	drawing-fonts.md descriptive name, no Mac match; §14; the FreeType stream read callback
 008972a8	cGZFont::Release	auto:C	high	mac 00200c8c score 1.0 support 1
-008972bd	cGZFont::CharWidth	auto:C	high	mac 002013ae score 1.0 support 1
-00897304	cGZFont::GetXOffset	auto:C	high	mac 0020134e score 1.0 support 1
-00897348	cGZFont::GetAdvanceWidth	auto:C	high	mac 002012ec score 1.0 support 1
+008972bd	cGZFont::CharWidth	manual:fonts.tsv	high	drawing-fonts.md §8; x1 - x0
+00897304	cGZFont::GetXOffset	manual:fonts.tsv	high	drawing-fonts.md §8
+00897348	cGZFont::GetAdvanceWidth	manual:fonts.tsv	high	drawing-fonts.md §8; advance + spacing adjustment
 0089738f	cGZFont::Find	auto:D	medium	mac 0020129a score 0.5 support 1
-008973d4	cGZFont::CalculateTextArea	auto:C	high	mac 00201648 score 1.0 support 1
+008973d4	cGZFont::CalculateTextArea	manual:fonts.tsv	high	drawing-fonts.md §8.2
 00897748	cGZFont::CopyGlyphToSourceData	auto:C	high	mac 00202bde score 1.0 support 1
 00897ab1	cGZFont::SetSize	auto:C	high	mac 002023d2 score 1.0 support 1
 008982ba	cGZFont::CachedBitmapData::Clear	auto:D	medium	mac 002021ae score 0.5 support 2
@@ -11202,20 +11205,20 @@ va	name	source	confidence	note
 00898cd9	_ft_new_input_stream	auto:B0	medium	mac 0059af04 score 0.912 support 1.0
 00898fc0	cGZFont::~cGZFont	auto:C	high	mac 002037c8 score 1.0 support 1
 00898fdc	cGZFont::AddCharData	auto:C	high	mac 0020325c score 1.0 support 1
-008993bb	cGZFont::BuildAntialiasingLookupArray	auto:D	medium	mac 00202f8c score 0.5 support 2
+008993bb	cGZFont::BuildAntialiasingLookupArray	manual:fonts.tsv	high	drawing-fonts.md §10
 0089955c	cGZFont::Init	auto:C	high	mac 002050fa score 1.0 support 1
 00899665	cGZFont::MakeSubstitutedString	auto:B10	medium	mac 00203d6c score 0.95 support 1.0
-00899987	cGZFont::SetAntialiasingGammaCorrection	auto:C	high	mac 002031a8 score 1.0 support 1
-008999ce	cGZFont::SetAntialiasingSharpness	auto:C	high	mac 00203160 score 1.0 support 1
+00899987	cGZFont::SetAntialiasingGammaCorrection	manual:fonts.tsv	high	drawing-fonts.md §4; [0, 10]
+008999ce	cGZFont::SetAntialiasingSharpness	manual:fonts.tsv	high	drawing-fonts.md §4; [-1, 1]
 00899a15	cGZFont::ConvertStringToUnicode	auto:B10	medium	mac 00203cc2 score 0.882 support 2.0
 00899bca	cGZFont::GetTextAsUnicode	auto:B9	medium	mac 00204174 score 0.875 support 2.0
 00899ca7	cGZFont::IsCharAvailable	auto:C	high	mac 00204f92 score 1.0 support 1
 00899d2a	cGZFont::PreloadChars	auto:C	high	mac 00204f12 score 1.0 support 1
-00899d81	cGZFont::CalculateWordsToFitInWidth	auto:B7	medium	mac 00204bd4 score 0.897 support 2.0
-00899f71	cGZFont::GetStringWidth	auto:B10	medium	mac 00204b1a score 0.93 support 2.0
+00899d81	cGZFont::CalculateWordsToFitInWidth	manual:fonts.tsv	high	drawing-fonts.md §8.1
+00899f71	cGZFont::GetStringWidth	manual:fonts.tsv	high	drawing-fonts.md §8; sum of advances
 00899ff4	cGZFont::GetStringVisibleWidth	auto:B8	medium	mac 00204a32 score 0.932 support 1.0
-0089a099	cGZFont::DrawTextLine	auto:C	high	mac 0020466c score 1.0 support 1
-0089a35b	cGZFont::DrawTextParagraph	auto:C	high	mac 00204312 score 1.0 support 1
+0089a099	cGZFont::DrawTextLine	manual:fonts.tsv	high	drawing-fonts.md §9
+0089a35b	cGZFont::DrawTextParagraph	manual:fonts.tsv	high	drawing-fonts.md §9
 0089a578	_FT_Stream_Pos	auto:B0	medium	mac 0059cf9e score 0.831 support 2.0
 0089b4c1	_TT_Load_SFNT_Header	auto:A	high	mac 005a967c score 1.0 support 0
 0089c267	_TT_Load_Names	auto:A	high	mac 005a9dbb score 1.0 support 0
