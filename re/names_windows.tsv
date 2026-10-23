@@ -4242,27 +4242,28 @@ va	name	source	confidence	note
 005ca8a0	cSC4ConstructionOccupant::operator.new	auto:B1	medium	mac 001178f0 score 0.821 support 1.0
 005ca8d0	cSC4ConstructionOccupant::SetBuildingCompletion	auto:A	high	mac 00118880 score 1.0 support 0
 005ca960	cSC4ConstructionOccupant::AddToRenderer	auto:B1	medium	mac 0011797a score 0.956 support 2.0
-005cad60	cSC4ConstructionOccupant::RebuildModel	auto:B1	medium	mac 00117e10 score 0.997 support 2.0
-005cb7c0	cSC4ConstructionOccupant::DoRotationChange	auto:B4	medium	mac 00117c32 score 0.969 support 2.0
-005cb9f0	cSC4ConstructionOccupant::DivideLot	auto:D	medium	mac 00118d9e score 0.5 support 1
+005cad60	cSC4ConstructionOccupant::RebuildModel	manual:construction-occupant.tsv	high	lot-developer.md §6.7.3; lot-records.md §9.1 (+0x158, +0x15C)
+005cb7c0	cSC4ConstructionOccupant::DoRotationChange	manual:construction-occupant.tsv	high	lot-developer.md §6.7.15
+005cb9f0	cSC4ConstructionOccupant::DivideLot	manual:construction-occupant.tsv	high	lot-developer.md §6.7.11
 005cbc10	cSC4ConstructionOccupant::CreateDustClouds	auto:A	high	mac 00118950 score 1.0 support 0
 005cbd20	cSC4ConstructionOccupant::SendConstructionMessage	auto:B0	medium	mac 00119044 score 0.928 support 2.0
-005cc020	cSC4ConstructionOccupant::SetScaffoldHeight	auto:B1	medium	mac 00118ad8 score 0.944 support 2.5
-005cc410	cSC4ConstructionOccupant::Draw	auto:B3	medium	mac 00119100 score 0.931 support 5.0
-005cc820	cSC4ConstructionOccupant::CreateCrane	auto:B1	medium	mac 00119b22 score 0.9 support 2.5
-005ccd70	cSC4ConstructionOccupant::RemoveRectangle	auto:B3	medium	mac 00117b6a score 0.851 support 2.0
+005cbe10	cSC4ConstructionOccupant::SetCraneAngle	manual:construction-occupant.tsv	high	lot-developer.md §6.7.12
+005cc020	cSC4ConstructionOccupant::SetScaffoldHeight	manual:construction-occupant.tsv	high	lot-developer.md §6.7.15
+005cc410	cSC4ConstructionOccupant::Draw	manual:construction-occupant.tsv	high	lot-developer.md §6.7.15
+005cc820	cSC4ConstructionOccupant::CreateCrane	manual:construction-occupant.tsv	high	lot-developer.md §6.7.12
+005ccd70	cSC4ConstructionOccupant::RemoveRectangle	manual:construction-occupant.tsv	high	lot-developer.md §6.7.12
 005ccf20	cSC4ConstructionOccupant::CreateAndPlaceProp	auto:B4	medium	mac 001196aa score 0.915 support 1.5
-005cd250	cSC4ConstructionOccupant::Write	auto:C	high	mac 0011cf78 score 1.0 support 2
-005cd570	cSC4ConstructionOccupant::AnimateCrane	auto:B2	medium	mac 0011a594 score 0.954 support 1.0
-005cd710	cSC4ConstructionOccupant::AttemptAddOuterCrane	auto:B2	medium	mac 00119e56 score 0.997 support 4.5
-005cdda0	cSC4ConstructionOccupant::AttemptAddInnerCrane	auto:B1	medium	mac 0011aa56 score 0.98 support 3.5
-005ce110	cSC4ConstructionOccupant::DoAnimationTick	auto:B0	medium	mac 0011a79c score 0.961 support 1.0
-005ce360	cSC4ConstructionOccupant::AttemptAddCrane	auto:A	high	mac 0011ad74 score 1.0 support 0
+005cd250	cSC4ConstructionOccupant::Write	manual:construction-occupant.tsv	high	lot-developer.md §6.7.10; lot-records.md §9.1
+005cd570	cSC4ConstructionOccupant::AnimateCrane	manual:construction-occupant.tsv	high	lot-developer.md §6.7.6, §6.7.12
+005cd710	cSC4ConstructionOccupant::AttemptAddOuterCrane	manual:construction-occupant.tsv	high	lot-developer.md §6.7.12
+005cdda0	cSC4ConstructionOccupant::AttemptAddInnerCrane	manual:construction-occupant.tsv	high	lot-developer.md §6.7.12
+005ce110	cSC4ConstructionOccupant::DoAnimationTick	manual:construction-occupant.tsv	high	lot-developer.md §6.7.6
+005ce360	cSC4ConstructionOccupant::AttemptAddCrane	manual:construction-occupant.tsv	high	lot-developer.md §6.7.7 step 1
 005ce3f0	std::vector<cSC4TrafficSimulator::tPotentialAccident,std::allocator<cSC4TrafficSimulator::tPotentialAccident>>::reserve	auto:D	medium	mac 00611e1e score 0.5 support 1
 005ce580	cSC4ConstructionOccupant::CreateAutomata	auto:A	high	mac 0011ae06 score 0.649 support 0
-005ce770	cSC4ConstructionOccupant::Read	auto:B4	medium	mac 0011cabe score 0.998 support 3.5
+005ce770	cSC4ConstructionOccupant::Read	manual:construction-occupant.tsv	high	lot-developer.md §6.7.10; lot-records.md §9.1
 005cec20	cSC4ConstructionOccupant::CreateSparks	auto:A	high	mac 0011b08c score 1.0 support 0
-005ced80	cSC4ConstructionOccupant::StaticInit	auto:A	high	mac 0011b416 score 0.779 support 0
+005ced80	cSC4ConstructionOccupant::StaticInit	manual:construction-occupant.tsv	high	lot-developer.md §6.7.2, §6.7.12, §6.7.13
 005cf380	cSC4ConstructionOccupant::CreateLotTexture	auto:D	medium	mac 0011b1ee score 0.5 support 1
 005cf610	LinearRandomIterator::Reset	auto:B1	medium	mac 00618332 score 0.982 support 2.0
 005cf790	cSC4ConstructionOccupant::AddGroundProps	auto:B0	medium	mac 0011c51c score 0.938 support 4.0
@@ -4272,11 +4273,11 @@ va	name	source	confidence	note
 005d00f0	cSC4ConstructionOccupant::cSC4ConstructionOccupant	auto:A	high	mac 0011b892 score 0.689 support 0
 005d04a0	cSC4ConstructionOccupant::GetGZCLSID	auto:C	low	mac 00667e00 score 1.0 support 1
 005d0640	__ZThn60_N24cSC4ConstructionOccupant4DrawEP14SC4DrawContextb	auto:B4	low	mac 0066855c score 0.96 support 1.0
-005d0680	cSC4ConstructionOccupant::DoDailySim	auto:A	high	mac 0011bd56 score 1.0 support 0
-005d0890	cSC4ConstructionOccupant::SetLot	auto:A	high	mac 0011c74e score 0.704 support 0
+005d0680	cSC4ConstructionOccupant::DoDailySim	manual:construction-occupant.tsv	high	lot-developer.md §6.7.5
+005d0890	cSC4ConstructionOccupant::SetLot	manual:construction-occupant.tsv	high	lot-developer.md §6.7.4
 005d0bc0	GZCOM_CreatecSC4ConstructionOccupant	auto:B0	medium	mac 0011d9c0 score 0.958 support 1.0
 005d0c00	cSC4ConstructionOccupant::~cSC4ConstructionOccupant	auto:C	high	mac 00669d2a score 1.0 support 1
-005d0ce0	cSC4ConstructionOccupant::Shutdown	auto:B0	medium	mac 0011d380 score 0.994 support 3.5
+005d0ce0	cSC4ConstructionOccupant::Shutdown	manual:construction-occupant.tsv	high	lot-developer.md §6.7.14
 005d1090	cSC4ConstructionOccupant::DoMessage	auto:B0	medium	mac 0011bfa0 score 0.998 support 4.0
 005d1300	cSC4ConstructionOccupant::Init	auto:B0	medium	mac 0011d742 score 0.969 support 5.5
 005d1520	cSC4DBSegmentIStream::QueryInterface	auto:A	high	mac 002e4fd8 score 1.0 support 0
