@@ -924,8 +924,13 @@ called inline by the signpost's own Write/Read. Object size `0x590` (the allocat
 |---|---|---|---|
 | 1 | version | u16 | 2 |
 | 2 | prop record | §10.1 | complete inline, from the prop's own version 6 (base occupant type `0xA823821E`) |
-| 3 | u32 at `+0x88` | u32 | written/read through the stream's slot 0x3C helper *(name unresolved — Q5)*; 0 in fresh objects |
-| 4 | position delta | vec3 | the three floats at `+0xCC/+0xD0/+0xD4` (`operator<<` `0x005DA580`) |
+| 3 | text | string | the sign text (object `+0x98`), stream slot 15 (`+0x3C`, a string; OP2) |
+| 4 | position | vec3 | the model's position, object `+0xDC/+0xE0/+0xE4` (`operator<<` `0x005DA580`) |
+
+*Corrected 2026-10-22 (re-signposts): `Write` (`0x005F5080`) and `Read` run on the `+0x10` serialisable view, so their
+`+0x88` and `+0xCC…+0xD4` are object `+0x98` (the text) and `+0xDC…+0xE4`; `SetPosition` runs on the `+0x0C`
+occupant view, whose `+0xD0…+0xD8` are the same three object fields (`0x005F4E9F`–`0x005F4EAE`). The offsets in
+the next paragraph are those views'.*
 
 The vec3 is the signpost's own position: `SetPosition` (occupant view slot 9, `0x005F4E90`) adds the requested
 delta into six 3×3 orientation matrices at `+0xDC…+0x118` (one per orientation), writes the absolute position into
@@ -939,7 +944,7 @@ State beyond the prop (measured on the object base):
 | Offset | Type | Role |
 |---|---|---|
 | `+0x6C`/`+0x70` | 2 × ptr | embedded `cS3DModelInstanceBasic` (`0x00801CF0`) sub-object; `+0x70` gets vtable `0x00AA5298` (edit mode) or `0x00AA5498` (game mode) from the constructor's bool argument |
-| `+0x88` | u32 | stream-slot-0x3C field, saved (record field 3) |
+| `+0x88` | u32 | not saved (corrected: record field 3 is the text at `+0x98`) |
 | `+0x98` | `cRZString` | the sign text; constructor installs the shared empty-string vtable `0x00A80810` |
 | `+0x9C…+0xA4` | 3 × ptr + u8 | model-table back pointer, edit target, load counter (`+0xA4`) |
 | `+0xA8`, `+0xA9` | 2 × u8 | change counter and moved flag (bit 0) |
@@ -953,9 +958,9 @@ State beyond the prop (measured on the object base):
 | `+0x4BC` | `cRZString*` | owned string (freed in the destructor) |
 | `+0x4C` | ptr | owned date-pair record (freed by `FUN_005EE160`) |
 | `+0x4D4…+0x507` | 4 rows × 4 bytes | corner colours copied from the static tables at `0x00AA5204` (row 0 = static colours, row 1 = dynamic) |
-| `+0x540…+0x564` | 10 × ptr | texture bindings, one per entry of the RID table `0x00AA5214…0x00AA523C` (keys `0x7AB50E44` / `0x1ABE787D`) |
-| `+0x568…+0x570` | vector | visual effects (`cRZAutoRefCount<cISC4VisualEffect>`) |
-| `+0x574` | | packed render state (`cSC4PackedRenderState::PackRenderState` `0x007D2B50`) |
+| `+0x54C…+0x570` | 10 × ptr | the ten piece textures, one per entry of the RID table `0x00AA5214…0x00AA523C` (instances `0x8B4A6560`–`0x8B4A6565`, `0x8B4A6564`, `0x8B4A6565`, `0x8B4A6566`, `0x8B4A6567`; keys `0x7AB50E44` / `0x1ABE787D`); `Init` fills them through the `+0x0C` view (`+0x540` there) |
+| `+0x574…+0x57C` | vector | the text textures `LoadTextures` makes (§10.3 below); `Shutdown` empties it through the `+0x0C` view (`+0x568` there). The element name in the export comes from a folded template (`0x00527180`) |
+| `+0x580` | | packed render state (`cSC4PackedRenderState::PackRenderState` `0x007D2B50`; `Init`'s `+0x574` is the `+0x0C` view's, `0x005F744F`) |
 
 Interfaces (sub-object map): `+0x00` the 8-slot class view `0x00AA5478` (`cSC4SignpostOccupant`: QI `0x005F4930`
 answers `0x4B44FBE2` with this, otherwise `ADD ECX,4` and the prop QI; slot 3 `AsOccupant` `0x005F8400` returns
@@ -984,11 +989,14 @@ Behaviour:
   prop's `Init` (`0x005EC940`), `PackRenderState(+0x574; args 1,1,1,0,1,1,1,0,3,4,5,-1,1.0f,1,-1)`, texture
   loading, three message subscriptions (`0xA6B79602`, `0x06CDB65B`, then a third via slot 0x14), and
   `RebuildModel`. Returns 1.
-- **`LoadTextures`** `0x005F5EF0` — for each of the ten RIDs in `0x00AA5214…0x00AA523C`: release the old binding,
-  ask the resource service (`0x00B43CD4`) slot 0x18 for (`0x7AB50E44`, `0x1ABE787D`, RID) → binding stored at
-  `+0x540 + 4·i`. `Shutdown` `0x005F5E20` unsubscribes, releases the ten bindings, empties the effect vector and,
-  when byte `+0xA0` says a model instance exists, unregisters from the animation tick manager (slot 0x18), then
-  frees the date pair and calls the base `Shutdown` (tail-jump).
+- **`LoadTextures`** `0x005F5EF0` *(rewritten 2026-10-22, re-signposts)* — empties the text-texture vector (object
+  `+0x574`); when the text (`+0x98`) is not empty, the text texture service (`0x00B43CE4`, its slot 4) renders it with
+  font `0x2C1FD612` into that vector *[inferred: one texture per piece of text]* (`0x005F5EF7`–`0x005F5F74`). The ten
+  piece textures are `Init`'s, not this function's: `Init` asks the resource service (`0x00B43CD4`) slot 6 for
+  (`0x7AB50E44`, `0x1ABE787D`, RID) for each entry of `0x00AA5214…0x00AA523C` (`0x005F745A`–`0x005F7465`).
+- **`Shutdown`** `0x005F5E20` unsubscribes, releases the ten bindings, empties the text-texture vector (object
+  `+0x574`) and, when byte `+0xA0` says a model instance exists, unregisters from the animation tick manager (slot
+  0x18), then frees the date pair and calls the base `Shutdown` (tail-jump).
 - **`SetText(text)`** `0x005F7600` — compares against the current text (`cRZString` slot 0x30 `CompareTo(arg, 1)`);
   if equal **and** `+0x9C == +0xA0` the call is skipped; otherwise copies (slot 0x34) and calls `LoadTextures` and
   `RebuildModel`. `GetText` `0x005F5920` tail-jumps the string's slot 0x34 copy into the caller's string.
@@ -996,7 +1004,9 @@ Behaviour:
   the object at `+0x9C`, i.e. the model instance's byte); no change → return. Sets the occupant view's flag 2 test
   (`IsFlagSet(2)`, slot 32) result aside, drives the model instance (`+0x70` view slots 0x34/0x38) with the new
   state, copies the four-byte colour row `0x00AA5204 + 4·(arg != 0)` into the four corner rows `+0x4D4…+0x4D7`,
-  `+0x4E4…+0x4E7`, `+0x4F4…+0x4F7`, `+0x504…+0x507` *(the row semantics are the OP3 question)*, and — only when
+  `+0x4E4…+0x4E7`, `+0x4F4…+0x4F7`, `+0x504…+0x507`: row 0 (static) is (144, 172, 190, 255), row 1 (dynamic)
+  (255, 255, 255, 204), in memory order *[inferred: R, G, B, A]* (`0x00AA5204` = `90 AC BE FF`, `FF FF FF CC`; OP3
+  answered 2026-10-22, re-signposts), and — only when
   the object is in edit mode (`+0xAC`) and the argument is false — calls the class-view slot 7 (`SetEditMode`, via
   `[EAX + 0x1C]` with 0).
 - **`SetEditMode(bool)`** `0x005F7320` — no change → return. Stores `+0xAC`. Turning on: class-view slot 6 with 1
@@ -1024,38 +1034,43 @@ A terrain text label drawn by the terrain overlay manager (the city-detail label
 a complete `cSC4PropOccupant` at `+0x04` (constructor `0x005F8300`), with the same consequences as §10.3. Object
 size `0x40`-strided group of the prop allocator (operator new `0x005F7D80`).
 
+*Rewritten 2026-10-22 (re-textdecals): the record and the state are given in object offsets. `Write` (`0x005F7DB0`)
+and `Read` run on the `+0x10` serialisable view, and `SetPosition`, `Shutdown` and `SetAllFlags` on the `+0x0C`
+occupant view; the earlier text quoted those views' offsets as object offsets, which made the fields conflict
+(OP1, OP2).*
+
 | # | Field | Type | Meaning |
 |---|---|---|---|
 | 1 | version | u16 | 3 |
 | 2 | prop record | §10.1 | complete inline, from the prop's own version 6 (base occupant type `0xA823821E`) |
-| 3 | u32 at `+0x5C` | u32 | the **prop's lot tag** re-written through the stream slot 0x3C helper (a duplicate of record #12 of §10.1) *[quirk — see Q5]* |
-| 4 | decal ID pair | 2 × f32 | `+0x84`, `+0x88` (`operator<<` `0x005DA520`), written again as a pair later *[quirk: the pair is written twice]* |
-| 5 | text height | f32 | `+0x80` (slot 0x30) |
-| 6 | text height (repeat) | f32 | `+0x80` again via the pair-helper with `+0x84` *[quirk — verify with a save]* |
-| 7 | position / orientation triple | 3 × f32 | `+0x8C`, `+0x90`, `+0x94` (`operator<<` `0x005DA580`) |
-| 8 | y | f32 | `+0x98` (slot 0x30) |
-| 9 | colour index byte | u8 | the low byte of `+0x9C` (slot 0x14; the dword holds the blue colour f32) |
+| 3 | text | string | `+0x6C`, stream slot 15 (`+0x3C`) |
+| — | (versions 1 and 2) | u32 | read and dropped |
+| 4 | position x, z | 2 × f32 | `+0x94`, `+0x98` (`operator<<` `0x005DA520`) |
+| 5 | text height | f32 | `+0x80`, stream slot 12 (`+0x30`); version 1: a u32 converted to float |
+| 6 | width | f32 | `+0x90` |
+| 7 | position x, z | 2 × f32 | `+0x94`, `+0x98` again *[quirk: written twice; the second read wins]* |
+| 8 | colour | 3 × f32 | `+0x9C`, `+0xA0`, `+0xA4` (`operator<<` `0x005DA580`) |
+| 9 | alpha | f32 | `+0xA8` |
+| 10 | orientation | u8 | the low byte of `+0xAC` (stream slot 5) |
 
-Read (`0x005F7E50`) mirrors this: version < 3 reads one extra u32 (slot 0x24) into a scratch and drops it;
-version == 1 reads `+0x70`'s value as u32→f32 (slot 0x24 then `FILD`/`FSTP`) instead of slot 0x30; the rest
-symmetric. Returns `GetError() == 0` in EAX (the `NEG AL; SBB EAX,EAX; INC EAX` epilogue form, §13.1).
+Read (`0x005F7E50`) mirrors this and returns `GetError() == 0` (the `NEG AL; SBB EAX,EAX; INC EAX` epilogue,
+§13.1).
 
-State (decal-specific, from the object base; prop fields end at `+0x6C`):
+State (decal-specific, object offsets; prop fields end at `+0x6C`):
 
-| Offset | Type | Role |
+| Offset | Type | Role, default |
 |---|---|---|
-| `+0x6C` | `cRZString` | the text (empty-string vtable `0x00A80810` initially) |
-| `+0x78`, `+0x7C` | 2 × u32 | overlay-manager decal IDs, −1 = none (constructor 0 for `+0x7C`? measured: `+0x7C` = 0, `+0x78` = msg-target-8) — **OP1** |
-| `+0x80` | f32 | text height (default 1.0) |
-| `+0x84`, `+0x88` | 2 × s32 | terrain-decal IDs, −1 = none |
-| `+0x8C` | u8 | dynamic flag |
-| `+0x90` | f32 | computed decal size (default 100.0) |
-| `+0x94`, `+0x98` | 2 × f32 | position x, z (SetPosition writes +0x88/+0x8C — the **OP1** conflict) |
-| `+0x9C…+0xA4` | 3 × f32 | colour RGB (default 255, 255, 255) |
-| `+0xA8` | f32 | alpha (default 1.0) |
-| `+0xAC` | u32 | orientation (default 1) |
-| `+0xB0` | ptr | texture binding for the text |
-| `+0xB4`, `+0xB8` | 2 × ptr | the two overlay-manager handles |
+| `+0x6C` | `cRZString` | the text, empty |
+| `+0x80` | f32 | text height `h`, 1.0 |
+| `+0x84`, `+0x88` | 2 × s32 | the land and water decal handles, −1 (none) |
+| `+0x8C` | u8 | dynamic, false |
+| `+0x90` | f32 | decal width `w`, 100.0 |
+| `+0x94`, `+0x98` | 2 × f32 | position x, z, 0 |
+| `+0x9C…+0xA4` | 3 × f32 | colour r, g, b, 255 each |
+| `+0xA8` | f32 | alpha, 1.0 |
+| `+0xAC` | u32 | orientation 0–3, 1 |
+| `+0xB0` | ptr | the text texture |
+| `+0xB4`, `+0xB8` | 2 × ptr | the land and water overlay managers |
 
 Interfaces: `+0x00` the 11-slot class view `0x00AA5680` (QI `0x005F7650` answers `0x2B3B7D86` with this, else
 `ADD ECX,4`; slot 3 `AsOccupant` `0x005F8400` shared → this+0xC; slots 4–10 `SetText` `0x005F82E0`, `GetText`
@@ -1079,20 +1094,21 @@ Behaviour:
 - **`SetAlpha(f)`** `0x005F7C00` — if f ≠ `+0xA8`: store; dynamic → mgr slot 0x44 on both ids; else `UpdateDecal`.
 - **`SetOrientation(u)`** `0x005F7D60` — if u ≠ `+0xAC`: store, `UpdateDecal`.
 - **`SetDynamic(bool)`** `0x005F8170` — if ≠ byte `+0x8C`: store and `UpdateOverlayManager`.
-- **`SetPosition(vec3*)`** `0x005F7AA0` — writes `+0x88 = arg[0]` and `+0x8C = arg[8]` (the x and z of the vector),
-  translates the prop box, asks the terrain service (`0x00B43CEC` slot 0x17C) for the altitude at that x/z into
-  the stack pair, and then either `MoveDecal` (when `+0x80`'s flag byte is set) or `UpdateDecal`. **This is the
-  measured conflict with the ctor's `+0x88` = −1 (a decal ID): the live field roles are the OP1 question; the
-  table above records both readings.**
-- **`UpdateDecal`** `0x005F7810` — releases both decal IDs (mgr slot 0x3C, set −1); returns early when the texture
-  `+0xB0` is null or flag 2 is clear (occupant view slot 32). Computes the cell-size aspect from the overlay
-  manager (`+0xB0` slot 0xC out pair, `FILD` × 2 / `FDIV`), scales `+0x90` from `+0x98 * +0x80 * 16.0`
-  (`0x00A8D45C`), reads the city cell size (`0x00B43CF4` slot 0x34), computes width/height (`+0x80` × 8.0 and the
-  half-constants `0x00A84D2C`), swaps them when `+0xAC` == 0, takes the view-level scale from the renderer's
-  table (`0x00B43DD0` slot 0x28 → `0x00B0A978 + level·4`), recomputes the prop box (`+0x40…+0x54`) around the
-  position with 0.1 margins (`0x00A8C950`), then `AddDecal` on both managers (slot 0xC with the box and colour
-  `+0x9C`) storing ids `+0x84`/`+0x88`, pushes colour (slot 0x48) and alpha (slot 0x44) to each, and finally asks
-  the occupant manager (`0x00B43D0C`) slot 0x60/4=24 (`MoveOccupant`) with (this, 0) to re-index the cells.
+- **`SetPosition(vec3*)`** `0x005F7AA0` (on the `+0x0C` view) — `(x, z)` := the vector's x and z (object `+0x94`,
+  `+0x98`), translates the prop box, asks the terrain service (`0x00B43CEC` slot 0x17C) for the altitude there, and
+  then a dynamic label moves its decals (`MoveDecal`) while a static one rebuilds them (`UpdateDecal`). *(Rewritten
+  2026-10-22, re-textdecals: the earlier `+0x88`/`+0x8C` are the view's.)*
+- **`UpdateDecal`** `0x005F7810` *(rewritten 2026-10-22, re-textdecals)* — both decals are removed (manager slot 0x3C,
+  handles := −1); without the texture `+0xB0`, or when flag 2 is clear (occupant view slot 32), stop. `r` := the
+  texture's width ÷ height (its slot 3: two integers, `FILD` × 2, `FDIV`); `w := 16 · r · h` (`0x00A8D45C`, stored in
+  `+0x90`); with `y` the terrain altitude at `(x, z)`, the prop box becomes `x ± a`, `y ± 0.1`, `z ± b` with `a := w /
+  2` (`0x00A84D2C`), `b := 8 · h` (`0x00A8E178`), the two swapped at orientation 0. The angle in turns is
+  `0x00B0A978[4 · rotation + orientation]` (rotation from the renderer's draw context): rotation 0: 0.25, 0, 0.125,
+  0.875; 1: 0.75, 0, 0.625, 0.875; 2: 0.75, 0.5, 0.625, 0.375; 3: 0.25, 0.5, 0.125, 0.375 for orientations 0–3. Then
+  on the land manager and then the water manager: `AddDecal(texture, (x, z), w, angle)` (slot 0xC) into `+0x84` /
+  `+0x88`, and for a valid handle the colour (slot 0x48) and the alpha (slot 0x44). Finally the occupant manager
+  (`0x00B43D0C`) slot 24 (`MoveOccupant`) with (this, 0). *(The earlier text read the texture as an overlay manager,
+  `+0x98` as a factor and the angle table as a view-level scale.)*
 - **`UpdateOverlayManager`** `0x005F7C80` — releases both ids, then asks `SL::TerrainView` (`0x00602160`) for 1 or
   2 handles (dynamic ? 2 : 1; the second call passes the count 2 when dynamic via `NEG/SBB/AND 2`), storing them
   in `+0xB4`/`+0xB8`.
@@ -1105,14 +1121,16 @@ Behaviour:
   with this or null (the `NEG/SBB/AND` trick), and when it answers and the city config slot 0x28 says so, set flag
   2 (view slot 0x74); release the manager. Subscribe `0xA6B79602`, `0x06CDB65B`, `0x26D31EC1` (message server slot
   0x14, target `+0x4`). Returns 1.
-- **`Shutdown`** `0x005F76C0` — unsubscribe the three; then per live manager handle (`+0xA8`, `+0xAC` — see OP1
-  for the ctor conflict) release its decal id (`+0x78`/`+0x7C`) and the manager itself; finally release `+0xA4`'s
+- **`Shutdown`** `0x005F76C0` — unsubscribe the three; then per live manager (object `+0xB4`, `+0xB8`; the
+  `+0x0C` view's `+0xA8`, `+0xAC`) remove its decal (`+0x84`/`+0x88`, the view's `+0x78`/`+0x7C`; slot 15) and release the
+  manager (OP1 answered 2026-10-22, re-textdecals); finally release `+0xA4`'s
   object, free the date pair (`FUN_005EE160`) and tail-call the base `Shutdown`.
 - **`DoMessage`** `0x005F8030` — `0x06CDB65B`: the same flag-2 dance as the signpost. `0x26D31EC1`:
   `UpdateOverlayManager`, re-ask the overlay service and set/clear flag 2 per its answer, then the prop's
   `DoMessage`. `0xA6B79602`: `UpdateDecal`, then the prop's `DoMessage`. Default: the prop's `DoMessage`.
-- **`SetAllFlags`** `0x005F81F0` — the signpost's protection plus: with bit 2 turning on, if `+0xA8` or `+0xAC` is
-  0 → `UpdateOverlayManager` else `UpdateDecal`; when `+0xA4` is 0 and the prop view's slot 0x1C returns non-zero,
+- **`SetAllFlags`** `0x005F81F0` — the signpost's protection plus: with bit 2 turning on, if a manager (object `+0xB4`
+  or `+0xB8`; the `+0x0C` view's `+0xA8`, `+0xAC`) is missing → `UpdateOverlayManager` else `UpdateDecal`; when the
+  texture (object `+0xB0`, the view's `+0xA4`) is null and the prop view's slot 0x1C returns non-zero,
   also `UpdateTexture`. With bit 2 turning off: `RemoveDecals`.
 - **Creation** — GZCOM creator `0x005F84D0` (pool `0x00B0A9B8`); registered at `0x00460851`. The label tool
   (`cSC4ViewInputControlLabelTool::UpdateTextDecal` `0x004BD320`, creation in `OnMouseDownL` `0x004BD890`) drives

@@ -63,3 +63,40 @@
 <!-- from: re-occprops (2026-10-20) -->
 - ~~**OP5:** `cSC4BlockingLotOccupantFilter` slot 3 (`0x004BDF90`, 26 bytes) body and users. [untraced]~~
   **ANSWERED 2026-10-21 (re-occfilters):** occupant-manager.md §13.2.6: slot 3 `0x004BDF90` is the base's `IsOccupantTypeIncluded(GetType())`; the blocking-lot filter's own slot 4 (`0x006C3C20`) is true only for flora `0x74758926`; the lot developer uses it.
+
+<!-- from: re-occprops (2026-10-20) -->
+- ~~**OP1:** text-decal field roles `+0x78`, `+0x84`, `+0x88`, `+0x8C`, `+0xAC` (lot-records.md §10.4): the
+  constructor writes `+0x78` = a message-target-derived pointer, `+0x7C` = 0, `+0x84`/`+0x88` = −1, `+0x8C` = 0,
+  `+0xAC` = 1 (`0x005F8300`); `SetPosition` writes x→`+0x88`, z→`+0x8C` (`0x005F7AA0`); `UpdateDecal` stores decal
+  IDs into `+0x84`/`+0x88` and tests `+0x8C` as the dynamic flag; `SetOrientation` writes `+0xAC` as a u32 but
+  `Shutdown` (`0x005F76C0`) treats `+0xAC` as a manager pointer and `+0x7C` as its decal id; `SetAlpha`/`SetTextColor`
+  treat `+0x84`/`+0x88` as ids and `+0xA8` as alpha. Settle with a live save: run the CreateTextDecal debug command
+  (`0x0BEAF1A2`), save, decode the record, and trace Write `0x005F7DB0`. [the ctor is the truth; the setter
+  addresses above are all measured]~~
+  **ANSWERED 2026-10-22 (re-textdecals):** the constructor's roles are the truth; the conflicting offsets were
+  sub-object views. `SetPosition`, `Shutdown` and `SetAllFlags` run on the `+0x0C` occupant view, so their
+  `+0x88`/`+0x8C` are object `+0x94`/`+0x98` (position x, z), `+0xA8`/`+0xAC` object `+0xB4`/`+0xB8` (the land and
+  water managers) and `+0x78`/`+0x7C` object `+0x84`/`+0x88` (the decal handles); `Write` runs on the `+0x10` view
+  (lot-records.md §10.4, record and state rewritten).
+
+<!-- from: re-occprops (2026-10-20) -->
+- ~~**OP2:** the `cIGZOStream`/`cIGZIStream` slot `+0x3C` semantic: lot-records.md §13.2 names it "GZStr", but the
+  signpost Write (`0x005F5080`) and Read (`0x005F50F0`) pass `&+0x88` (a u32 field) and the decal Write/Read pass
+  `&+0x5C` (the prop's lot tag u32). Also settle slot `+0x30` = Float32 vs Uint32 (the decal reads `+0x70` via
+  slot 0x24 in v1 with FILD, via slot 0x30 in v2+; SetTextHeight writes f32 to `+0x80` — so 0x30 = Float32 fits,
+  and the `+0x84`/`+0x88` pair read as f32 would be NaN bit patterns of the −1 sentinel, which the integer
+  compares treat as −1). One live trace of either Write or the SDK header order settles both.
+  [0x30 = Float32; 0x3C = ???]~~
+  **ANSWERED 2026-10-22 (re-textdecals, re-signposts):** slot `+0x3C` (15) writes and reads a **string**: the signpost
+  passes its text (`+0x10` view `+0x88` = object `+0x98`) and the decal its text (`+0x10` view `+0x5C` = object
+  `+0x6C`); slot `+0x30` (12) is the f32 (height, width, alpha). The decal record is lot-records.md §10.4
+  (`0x005F7DB0`).
+
+<!-- from: re-occprops (2026-10-20) -->
+- ~~**OP3:** signpost `SetDynamic` (`0x005F4BA0`) colour tables: it copies 4 bytes from `0x00AA5204 + 4·(arg!=0)`
+  into the four corner rows at `+0x4D4…+0x4D7`, `+0x4E4…+0x4E7`, `+0x4F4…+0x4F7`, `+0x504…+0x507` (both byte
+  orders measured: the load is `[EAX*4 + 0xaa5204]` style with per-corner offsets shuffled). What are the two
+  rows (static vs edit-time colours) and the corner order? [dynamic = row 1]~~
+  **ANSWERED 2026-10-22 (re-signposts):** row 0 is the static colour (144, 172, 190, 255), row 1 the dynamic
+  (edit-time) colour (255, 255, 255, 204), bytes in memory order (`0x00AA5204` = `90 AC BE FF`, `FF FF FF CC`;
+  *[inferred]* R, G, B, A); `SetDynamic(d)` copies row `d != 0` into the four corners.
